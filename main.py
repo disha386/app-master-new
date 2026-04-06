@@ -452,8 +452,8 @@ video_url = "https://res.cloudinary.com/dnodncslz/video/upload/v1774435343/pinna
 components.html(f"""
 <div style="
     width:100%;
-    padding-left:25px;   /* 🔥 MATCH NAVBAR */
-    padding-right:25px;  /* 🔥 MATCH RIGHT SIDE */
+    padding-left:25px;   /*  MATCH NAVBAR */
+    padding-right:25px;  /*  MATCH RIGHT SIDE */
     margin-top:20px;
 ">
 
@@ -499,19 +499,19 @@ html = f"""
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:50px;
+    gap:30px;
     margin-top:60px;
     width:100%;
 '>
 
     <!-- LEFT TEXT -->
-    <div style='width:45%;'>
+    <div style="width:50%; margin-left:30px;">
 
         <h2 style='color:#002366; font-size:34px; font-weight:700;'>
             Discover Pinnacle
         </h2>
 
-        <p style='font-size:16px; line-height:1.7; margin-bottom:20px;'>
+        <p style="font-size:22px; line-height:1.8; margin-bottom:20px;color:#2a4d8f;">
 Pinnacle is your gateway to innovative solutions and transformative experiences. We specialize in delivering excellence across technology, design, and strategy.
 </p>
 
@@ -523,17 +523,42 @@ Our 30+ years of expertise drive excellence in the Design, Preconstruction, Cons
        
 
 
-        <a href="#" style="
-            display:inline-block;
-            background:#002366;
-            color:white;
-            padding:12px 28px;
-            border-radius:8px;
-            text-decoration:none;
-            margin-top:20px;
-        ">
-            Know More →
-        </a>
+<a href="#" style="
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#002366;
+    color:white;
+    padding:12px 24px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+">
+
+    Know More
+
+    <span style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:30px;
+        height:30px;
+        background:white;
+        border-radius:50%;
+        color:#002366;   /*  BLUE arrow */
+        font-size:16px;
+        font-weight:bold;
+    ">
+        →
+    </span>
+
+</a>
+
+
+
+
 
     </div>
 
@@ -582,14 +607,14 @@ components.html("""
     margin:60px 0;
     position:relative;
     box-shadow:0 8px 20px rgba(0,0,0,0.1);
-    padding:40px 25px 40px 25px;   /* 🔥 SAME LEFT PADDING */
+    padding:40px 25px 40px 25px;   /*  SAME LEFT PADDING */
 ">
 
     <!-- 🔵 TITLE -->
     <div style="
         position:absolute;
         top:20px;
-        left:25px;   /* 🔥 SAME AS PADDING */
+        left:25px;   /* SAME AS PADDING */
         font-size:24px;
         font-weight:700;
         color:#002366;
@@ -598,7 +623,7 @@ components.html("""
         Industry Associations
     </div>
 
-    <!-- 🟦 LOGO ALIGNMENT -->
+    <!--  LOGO ALIGNMENT -->
     <div style="
         width:100%;
         height:110px;
@@ -607,7 +632,7 @@ components.html("""
         overflow:hidden;
     ">
 
-        <!-- 🟢 MOVING LOGOS -->
+        <!-- MOVING LOGOS -->
         <div style="
             display:flex;
             align-items:center;
@@ -663,7 +688,7 @@ st.markdown("""
     margin-top:10px;
     font-size:20px;
     font-family:sans-serif;
-    color:#4a6fa5;   /* 🔵 light dark blue */
+    color:#4a6fa5;   /*  light dark blue */
 ">
     Adhering to international construction codes and standards, our range of services includes the following.
 """,unsafe_allow_html=True)
@@ -704,13 +729,13 @@ components.html(f"""
             font-size:15px;
             line-height:1.6;
             color:#333;
-            margin-bottom:20px;   /* 🔥 space before button */
+            margin-bottom:20px;   /*  space before button */
         '>
         We provide intelligent BIM solutions that improve coordination,
         reduce risks, and enhance overall project efficiency.
         </p>
 
-        <!-- 🔥 BUTTON MOVED HERE -->
+        <!--  BUTTON MOVED HERE -->
         <a href="#" style="
             display:inline-block;
             background:#002366;
