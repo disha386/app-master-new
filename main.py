@@ -13,11 +13,10 @@ header {visibility: hidden;}
 footer {visibility: hidden;}
 .block-container {
     padding-top: 0rem !important;
+    margin-top: -20px;   /*  pulls everything upward */
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
-
-    
 
 </style>
 """, unsafe_allow_html=True)
@@ -26,7 +25,11 @@ footer {visibility: hidden;}
 conn = sqlite3.connect("portal.db", check_same_thread=False)
 cursor = conn.cursor()
 
+#cursor.execute("DELETE FROM ui_components WHERE name='navbar' AND type='css'")
+#conn.commit()
 
+#cursor.execute("DELETE FROM ui_components WHERE name='navbar' AND type='html'")
+#conn.commit()
 
 
 
@@ -144,10 +147,11 @@ if count == 0:
 
     </div>
 
-    <div class="navbar-right">
-        <a class="login-btn" href="#">Login</a>
-        <a class="contact-btn" href="#">Get in Touch</a>
-    </div>
+ <div class="navbar-right">
+    <span class="search-icon">🔍︎</span>
+    <a class="login-btn" href="#">Login</a>
+    <a class="contact-btn" href="#">Get in Touch</a>
+</div>   
 
 </div>
 
@@ -194,7 +198,7 @@ if count == 0:
 }
 
 .logo {
-    height: 50px;
+    height: 65px;
 }
 
 /* MENU */
@@ -206,8 +210,6 @@ if count == 0:
 .menu-item:hover .dropdown-content {
     display: block;
 }
-
-
 
 
 
@@ -224,15 +226,6 @@ if count == 0:
     border-radius: 5px;
     z-index: 9999;
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -260,18 +253,58 @@ if count == 0:
 }
 
 
-/* BUTTONS */
-.login-btn {
-    padding: 8px 16px;
-    border: 1px solid #ccc;
-    background: white;
-    color: black;
+/* BUTTONS - MODERN */
+.login-btn,
+.contact-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none !important;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-.contact-btn {
-    padding: 8px 16px;
-    background: orange;
+.search-icon {
+    font-size: 20px;   /*  bigger */
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+
+
+/* LOGIN BUTTON */
+.login-btn {
+    background: white;
+    color: #002366;
+    border: 1px solid #002366;
+}
+
+.login-btn:hover {
+    background: #002366;
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-decoration: none !important;
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+    background: linear-gradient(135deg, #ff8c00, #ff5e00);
+    color: white;
+}
+
+.contact-btn:hover {
+    background: linear-gradient(135deg, #ff5e00, #ff8c00);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    text-decoration: none !important;
+}
+
+/*  FORCE REMOVE UNDERLINE */
+a {
+    text-decoration: none !important;
 }
 </style>
 
@@ -322,11 +355,6 @@ def get_component(name, type_):
     )
     result = cursor.fetchone()
     return result[0] if result else ""
-
-
-
-
-
 
 
 
@@ -390,10 +418,7 @@ if len(images) > 0:
     logo_base64 = base64.b64encode(images[0][0]).decode()
     full_code = full_code.replace("__LOGO__", logo_base64)
 
-components.html(full_code, height=130)
-
-
-
+components.html(full_code, height=140)
 
 
 
@@ -403,7 +428,7 @@ components.html(full_code, height=130)
 ######  PAGE CONTENT
 st.markdown("""
 <div style="
-    margin-top:20px;
+    margin-top:0px;
     padding-left:25px;   /* MATCH NAVBAR */
     width:100%;
     font-size:52px;
@@ -443,16 +468,6 @@ components.html(f"""
 
 </div>
 """, height=520)
-
-
-
-
-
-
-
-
-
-
 
 
 
