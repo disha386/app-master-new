@@ -423,12 +423,10 @@ components.html(full_code, height=140)
 
 
 
-
-
 ######  PAGE CONTENT
 st.markdown("""
 <div style="
-    margin-top:0px;
+    margin-top:-32px;
     padding-left:25px;   /* MATCH NAVBAR */
     width:100%;
     font-size:52px;
@@ -610,7 +608,7 @@ components.html("""
     padding:40px 25px 40px 25px;   /*  SAME LEFT PADDING */
 ">
 
-    <!-- 🔵 TITLE -->
+    <!--  TITLE -->
     <div style="
         position:absolute;
         top:20px;
@@ -637,7 +635,7 @@ components.html("""
             display:flex;
             align-items:center;
             gap:80px;
-            animation: scroll 25s linear infinite;
+            animation: scroll 15s linear infinite;
         ">
 
             <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
