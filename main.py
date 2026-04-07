@@ -1100,8 +1100,134 @@ components.html(f"""
           
 """, height=420)
 
+###### DIGITAL TWIN
+digital_twin_image_url =" https://res.cloudinary.com/dnodncslz/image/upload/v1775560726/bim-vdc_consulting_pinnacle_infotech_xovez5.webp"
+components.html(f"""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+<style>
+.custom-btn {{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#002366;
+    color:white;
+    padding:12px 26px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}}
+.custom-btn:hover {{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}}
+</style>
 
+<div style='
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    margin-top:40px;
+    width:100%;
+'>
+
+    <!-- LEFT TEXT + BUTTON -->
+    <div style='width:30%;'>
+
+        <div style='
+            color:#4a6fa5;
+            font-size:26px;
+            font-weight:700;
+            font-family: Georgia, serif;
+            margin-bottom:15px;
+        '>
+            Digital Twin
+        </div>
+
+        <p style='
+            font-size:15px;
+            line-height:1.6;
+            color:#333;
+            margin-bottom:20px;
+        '>
+        Our Digital Twin solutions create real-time virtual replicas of
+        physical assets, enabling better monitoring, analysis, and
+        decision-making throughout the project lifecycle.
+        </p>
+
+        <!-- CAPSULE BUTTON -->
+        <a href="#" class="custom-btn">
+            Know More
+            <span style="
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:30px;
+                height:30px;
+                background:white;
+                border-radius:50%;
+                color:#002366;
+                font-size:16px;
+                font-weight:bold;
+            ">→</span>
+        </a>
+
+    </div>
+
+    <!-- CENTER IMAGE -->
+    <div style='width:30%; display:flex; justify-content:center;'>
+
+        <img src="{digital_twin_image_url}"
+             style='
+                width:100%;
+                height:320px;
+                object-fit:cover;
+                border-radius:12px;
+             ' />
+
+    </div>
+
+    <!-- RIGHT SIDE ICONS + TEXT -->
+    <div style='width:30%;'>
+
+        <div style='font-size:17px; color:#333; font-weight:500;'>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-cpu-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Real-Time Monitoring
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-diagram-3-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Data Integration
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-graph-up-arrow" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Performance Analysis
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-tools" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Predictive Maintenance
+            </div>
+
+            <div style="display:flex; align-items:center;">
+                <i class="bi bi-eye-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Enhanced Visualization
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+""", height=420)
 
 
 
