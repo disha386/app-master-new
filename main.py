@@ -4,7 +4,7 @@ import os
 import streamlit.components.v1 as components
 import base64
 
-st.set_page_config(page_title="MY WEBSITE", layout="wide")
+st.set_page_config(page_title="my webapp", layout="wide")
 ##deploy hide
 st.markdown("""
 <style>
@@ -698,9 +698,30 @@ bim_image_url = "https://res.cloudinary.com/dnodncslz/image/upload/v1774604187/b
 # ================= BIM SERVICES (3 COLUMN LAYOUT) =================
 
 # ================= BIM SERVICES (3 COLUMN - BUTTON LEFT) =================
-
-
 components.html(f"""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+.custom-btn {{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#002366;
+    color:white;
+    padding:12px 26px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}}
+.custom-btn:hover {{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}}
+</style>
+
 <div style='
     display:flex;
     justify-content:center;
@@ -727,22 +748,27 @@ components.html(f"""
             font-size:15px;
             line-height:1.6;
             color:#333;
-            margin-bottom:20px;   /*  space before button */
+            margin-bottom:20px;
         '>
         We provide intelligent BIM solutions that improve coordination,
         reduce risks, and enhance overall project efficiency.
         </p>
 
-        <!--  BUTTON MOVED HERE -->
-        <a href="#" style="
-            display:inline-block;
-            background:#002366;
-            color:white;
-            padding:10px 24px;
-            border-radius:8px;
-            text-decoration:none;
-        ">
-            Know More →
+        <!-- CAPSULE BUTTON -->
+        <a href="#" class="custom-btn">
+            Know More
+            <span style="
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:30px;
+                height:30px;
+                background:white;
+                border-radius:50%;
+                color:#002366;
+                font-size:16px;
+                font-weight:bold;
+            ">→</span>
         </a>
 
     </div>
@@ -760,57 +786,50 @@ components.html(f"""
 
     </div>
 
-    <!-- RIGHT TEXT -->
+    <!-- RIGHT SIDE WITH ICONS -->
     <div style='width:30%;'>
 
-        <p style='
-            font-size:15px;
-            line-height:1.6;
-            color:#333;
-        '>
-        Our BIM expertise ensures seamless collaboration across design,
-        construction, and facility management for better outcomes.
-        </p>
+        <div style='font-size:17px; color:#333; font-weight:500;'>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-diagram-3-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Coordination & Collaboration
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-exclamation-triangle-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Risk Reduction
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-clock-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Time Efficiency
+            </div>
+
+            <div style="display:flex; align-items:center; margin-bottom:14px;">
+                <i class="bi bi-cpu-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Smart Modeling
+            </div>
+
+            <div style="display:flex; align-items:center;">
+                <i class="bi bi-bar-chart-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+                Better Project Outcomes
+            </div>
+
+        </div>
 
     </div>
 
 </div>
-""", height=400)
+
+""", height=420)
+
+
+
 
 
      
       
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-    
-
-
-
 
 # ================= ENGINEERING DESIGN SECTION =================
 
@@ -820,6 +839,29 @@ components.html(f"""
 eng_image_url = "https://res.cloudinary.com/dnodncslz/image/upload/v1774604330/engineering_design_pinnacle_infotech_lbnhpf.webp"
 
 components.html(f"""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+.custom-btn {{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#002366;
+    color:white;
+    padding:12px 26px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+    transition:0.3s;
+}}
+.custom-btn:hover {{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}}
+</style>
+
 <div style='
     display:flex;
     justify-content:center;
@@ -852,15 +894,21 @@ components.html(f"""
         ensuring efficiency and sustainability across all projects.
         </p>
 
-        <a href="#" style="
-            display:inline-block;
-            background:#002366;
-            color:white;
-            padding:10px 24px;
-            border-radius:8px;
-            text-decoration:none;
-        ">
-            Know More →
+        <!-- CAPSULE BUTTON -->
+        <a href="#" class="custom-btn">
+            Know More
+            <span style="
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                width:30px;
+                height:30px;
+                background:white;
+                border-radius:50%;
+                color:#002366;
+                font-size:16px;
+                font-weight:bold;
+            ">→</span>
         </a>
 
     </div>
@@ -878,64 +926,46 @@ components.html(f"""
 
     </div>
 
-    <!-- RIGHT TEXT -->
-    <div style='width:30%;'>
+    <!-- RIGHT SIDE WITH ICONS -->
+<div style='width:30%;'>
 
-        <p style='
-            font-size:15px;
-            line-height:1.6;
-            color:#333;
-        '>
-        Our team integrates modern tools and expertise to deliver accurate,
-        reliable, and high-performance engineering outcomes.
-        </p>
+    <div style='font-size:16.5px; color:#333;'>
+
+        <div style="display:flex; align-items:center; margin-bottom:12px;">
+            <i class="bi bi-rulers" style="color:#002366; margin-right:10px; font-size:19px;"></i>
+            Precision Engineering
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:12px;">
+            <i class="bi bi-lightbulb-fill" style="color:#002366; margin-right:10px; font-size:19px;"></i>
+            Innovative Solutions
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:12px;">
+            <i class="bi bi-speedometer2" style="color:#002366; margin-right:10px; font-size:19px;"></i>
+            High Performance
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:12px;">
+            <i class="bi bi-globe" style="color:#002366; margin-right:10px; font-size:19px;"></i>
+            Sustainable Design
+        </div>
+
+        <div style="display:flex; align-items:center;">
+            <i class="bi bi-gear-fill" style="color:#002366; margin-right:10px; font-size:19px;"></i>
+            Advanced Tools
+        </div>
 
     </div>
 
-</div>
-""", height=400)
+</div>   
 
 
 
+""", height=420)
+   
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
 
 
 
@@ -947,6 +977,7 @@ digital_image_url = "https://res.cloudinary.com/dnodncslz/image/upload/v17746042
 
 
 components.html(f"""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <div style='
     display:flex;
     justify-content:center;
@@ -978,17 +1009,41 @@ components.html(f"""
         Our digital construction approach enhances visualization, planning,
         and execution through advanced technologies and smart workflows.
         </p>
+<a href="#" style="
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:#002366;
+    color:white;
+    padding:12px 26px;
+    border-radius:50px;
+    text-decoration:none;
+    margin-top:25px;
+    font-size:16px;
+    font-weight:600;
+">
 
-        <a href="#" style="
-            display:inline-block;
-            background:#002366;
-            color:white;
-            padding:10px 24px;
-            border-radius:8px;
-            text-decoration:none;
-        ">
-            Know More →
-        </a>
+    Know More
+
+    <span style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:30px;
+        height:30px;
+        background:white;
+        border-radius:50%;
+        color:#002366;
+        font-size:16px;
+        font-weight:bold;
+    ">
+        →
+    </span>
+
+</a>
+       
+
+
 
     </div>
 
@@ -1009,33 +1064,41 @@ components.html(f"""
     <!-- RIGHT TEXT -->
 <div style='width:30%;'>
 
-    <!-- REPLACE PARAGRAPH WITH LIST -->
-    <div style='
-        font-size:15px;
-        color:#333;
-        line-height:2;
-    '>
+    <div style='font-size:17px; color:#333; font-weight:500;'>
 
-        <div> 3D Modelling</div>
-        <div> Architectural</div>
-        <div> Marketing/BID Presentation</div>
-        <div> GIS</div>
-        <div>✔ Documentation</div>
+        <div style="display:flex; align-items:center; margin-bottom:14px;">
+            <i class="bi bi-box-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+            3D Modelling
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:14px;">
+            <i class="bi bi-building" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+            Architectural
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:14px;">
+            <i class="bi bi-megaphone-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+            Marketing / BID Presentation
+        </div>
+
+        <div style="display:flex; align-items:center; margin-bottom:14px;">
+            <i class="bi bi-map-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+            GIS
+        </div>
+
+        <div style="display:flex; align-items:center;">
+            <i class="bi bi-file-earmark-text-fill" style="color:#002366; margin-right:12px; font-size:21px;"></i>
+            Documentation
+        </div>
 
     </div>
 
 </div>
 
-</div>   
 
 
-""", height=400)
-        
-     
-
-       
           
-
+""", height=420)
 
 
 
