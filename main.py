@@ -555,9 +555,6 @@ Our 30+ years of expertise drive excellence in the Design, Preconstruction, Cons
 </a>
 
 
-
-
-
     </div>
 
     <!-- RIGHT IMAGE -->
@@ -596,7 +593,7 @@ components.html(html, height=520)
 # ================= MOVING IMAGE BAR =================
 
 
-# ✅ MOVING IMAGE BAR (PUT HERE)
+#  MOVING IMAGE BAR (PUT HERE)
 components.html("""
 <div style="
     width:100%;
@@ -824,12 +821,6 @@ components.html(f"""
 
 """, height=420)
 
-
-
-
-
-     
-      
 
 # ================= ENGINEERING DESIGN SECTION =================
 
@@ -1230,6 +1221,25 @@ components.html(f"""
 """, height=420)
 
 
+#### our####
+components.html("""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<style>
+.airport-img {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+    transition: all 0.4s ease;
+    position: absolute;
+    left: 50%;
+    top: 0;
+}
+
+.airport-row:hover + .airport-hover-area .airport-img {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
 
 
 
@@ -1245,8 +1255,181 @@ components.html(f"""
 
 
 
-        
+</style>
 
 
 
- 
+
+
+<div style="
+    width:100%;
+    background:#f5f5f5;
+    padding:30px 20px 500px 20px;
+    margin-top:40px;
+">
+
+    <!-- TOP CENTER HEADING -->
+    <div style="text-align:center; max-width:1000px; margin:0 auto;">
+
+        <h2 style="
+            color:#002366;
+            font-size:32px;
+            font-weight:800;
+            font-family: Georgia, serif;
+            margin-bottom:10px;
+        ">
+            Our Verticals
+        </h2>
+
+        <p style="
+            color:#4a6fa5;
+            font-size:22px;
+            font-weight:500;
+        ">
+            Pinnacle’s 360° BIM solutions cater to complete lifecycles of large-scale infrastructure projects across continents
+        </p>
+
+    </div>
+
+    <!--  AIRPORT -->
+ <div class="airport-row" style="margin-top:80px; position:relative;">
+
+    <!-- LEFT TEXT -->
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:14px;
+        font-size:24px;
+        font-weight:700;
+        color:#4a6fa5;
+        padding-left:60px;
+    ">
+        <i class="bi bi-airplane-fill" style="
+            font-size:28px;
+            transform: rotate(20deg);
+        "></i>
+        Airport
+    </div>
+
+   
+
+</div>
+             
+
+    <!-- LINE -->
+<div class="airport-hover-area" style="position:relative;">
+
+    <!-- LINE -->
+    <div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+
+    <!-- IMAGE -->
+<div style="text-align:center;">
+    <img class="airport-img"
+         src="https://res.cloudinary.com/dnodncslz/image/upload/v1775639362/OIP_hlipg2.jpg"
+         style="
+            width:360px;
+            height:210px;
+            object-fit:cover;
+            border-radius:14px;
+
+            position:absolute;
+            left:50%;
+            transform:translate(-50%, -50%);
+            top:0;
+         ">
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+</div>
+
+
+
+    <!-- DATA CENTre -->
+    <div style="padding-left:60px;">
+        <div style="
+            display:flex;
+            align-items:center;
+            gap:14px;
+            font-size:24px;
+            font-weight:700;
+            color:#4a6fa5;
+        ">
+            <i class="bi bi-database-fill" style="font-size:28px;"></i>
+            Data Centre
+        </div>
+    </div>
+<!-- LINE -->
+<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+
+<!-- SEMICONDUCTOR -->
+<div style="padding-left:60px;">
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:14px;
+        font-size:24px;
+        font-weight:700;
+        color:#4a6fa5;
+    ">
+        <i class="bi bi-cpu-fill" style="font-size:28px;"></i>
+        Semiconductor
+    </div>
+</div>
+
+<!-- LINE -->
+<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+
+<!--  STADIUM -->
+<div style="padding-left:60px;">
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:14px;
+        font-size:24px;
+        font-weight:700;
+        color:#4a6fa5;
+    ">
+    <i class="bi bi-record-circle" style="font-size:28px; color:#4a6fa5;"></i>
+        Stadium
+    </div>
+</div>
+
+<!-- LINE -->
+<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+
+<!--  INDUSTRIAL -->
+<div style="padding-left:60px;">
+    <div style="
+        display:flex;
+        align-items:center;
+        gap:14px;
+        font-size:24px;
+        font-weight:700;
+        color:#4a6fa5;
+    ">
+        <i class="bi bi-building-gear" style="font-size:28px;"></i>
+        Industrial
+    </div>
+</div>
+
+
+
+</div>
+""", height=900)
