@@ -17,6 +17,7 @@ footer {visibility: hidden;}
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
+
 .stVerticalBlock{background-color:#ffffff!important;}
 
 </style>
@@ -1235,9 +1236,11 @@ components.html("""
     overflow: hidden;
     border-radius: 12px;
     transition: background 0.5s ease;
+    overflow: visible; 
 }
 
 /* blue bar appears with pseudo-element */
+
 .vertical-section::before {
     content: "";
     position: absolute;
@@ -1249,19 +1252,56 @@ components.html("""
     opacity: 0;
     transition: opacity 0.4s ease;
     border-radius: 12px;
-    z-index: 0;
+    z-index: 1;
+}
+
+.vertical-section::before {
+    content: "";
+    position: absolute;
+
+    left: 40px;
+    right: 40px;
+
+    top: 50%;
+    height: 80%;   /* smaller initially */
+
+    transform: translateY(-50%) scaleY(0.8);  /*  center-based */
+    transform-origin: center;
+
+    background: linear-gradient(90deg, #2c3e66, #5a7fcf);
+
+    opacity: 0;
+    transition: all 0.4s ease;
+
+    border-radius: 18px;
+    z-index: 1;
 }
 
 .vertical-section:hover::before {
-    opacity: 1;   /* blue bar appears */
+    opacity: 1;
+    transform: translateY(-50%) scaleY(1.5);  /*  expands BOTH up & down */
+    box-shadow: 0 20px 50px rgba(44, 62, 102, 0.35);
 }
 
-/* text above blue bar */
+
+   /*  keeps it clean inside */
+.vertical-section {
+    overflow: visible;   /* MUST */
+}
 .vertical-content, .title {
     position: relative;
-    z-index: 1;
-    color: white; /* appears white on hover */
+    z-index: 5;
 }
+
+
+
+
+.vertical-content {
+    overflow: visible;
+}
+
+
+
 
 /* hide content initially */
 .vertical-content {
@@ -1270,9 +1310,9 @@ components.html("""
     gap: 40px;
 
     position: absolute;
-    left: 320px;
+    right: 100px; 
     top: 50%;
-    transform: translateY(-50%) translateX(30px);
+    transform: translateY(-50%) translateX(0);
 
     opacity: 0;
     visibility: hidden;
@@ -1295,10 +1335,23 @@ components.html("""
 }
 
 .vertical-content img {
-    opacity: 0;
-    transform: translateX(30px);
-    transition: all 0.5s ease;
+    position: relative;
+    z-index: 6;   /*  topmost */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* hover trigger */
 .vertical-section:hover .vertical-content img {
@@ -1329,6 +1382,7 @@ components.html("""
 
 
 /* divider line */
+
 .vertical-section::after {
     content: "";
     position: absolute;
@@ -1337,7 +1391,12 @@ components.html("""
     bottom: 0;
     height: 1px;
     background: rgba(0,0,0,0.15);
+    z-index: 0;
+    transition: opacity 0.3s ease;
 }
+
+
+
 /* make icon white on hover */
 .vertical-section:hover .title i {
     color: white !important;
@@ -1361,10 +1420,10 @@ components.html("""
     transition: color 0.3s ease;
 }
 .sub-text {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     color: #4a6fa5;
-
+    line-height: 1.5;
     opacity: 0;
     visibility: hidden;
     transform: translateY(6px);
@@ -1384,6 +1443,16 @@ components.html("""
     height: auto;
     color: white !important;
 }
+.vertical-section {
+    display: flex;
+    align-items: center;
+}
+
+.vertical-section:hover::after {
+    opacity: 0;   /*  hides line smoothly */
+}
+
+
 
 
 
@@ -1393,7 +1462,7 @@ components.html("""
 <div style="
     width:100%;
     background:#f5f5f5;
-    padding:30px 20px 500px 20px;
+    padding:30px 120px 120px 20px;
     margin-top:40px;
 ">
 
@@ -1483,8 +1552,79 @@ components.html("""
             <img 
                 src="https://res.cloudinary.com/dnodncslz/image/upload/v1775639362/OIP_hlipg2.jpg"
                 style="
-                    width:260px;
-                    height:160px;
+                    width:360px;
+                    height:200px;
+                    object-fit:cover;
+                    border-radius:12px;
+                    position: relative;
+                    right: -60px;   /*  pushes image OUTSIDE blue box */
+                    z-index: 6;
+                    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+
+
+
+                ">
+        </div>
+
+    </div>
+
+</div>
+   
+    <!-- DATA CENTre -->
+    <!-- DATA CENTRE (SAME AS AIRPORT) -->
+<div class="vertical-section">
+
+    <div class="vertical-row">
+
+        <!-- ICON + TITLE -->
+        <div class="title" style="
+            display:flex;
+            flex-direction:row;
+            align-items:flex-start;
+            gap:12px;
+            font-size:24px;
+            font-weight:700;
+            color:#4a6fa5;
+        ">
+
+            <!-- ICON -->
+            <i class="bi bi-database-fill" style="
+                font-size:28px;
+                margin-top:4px;
+            "></i>
+
+            <!-- TEXT BLOCK -->
+            <div style="display:flex; flex-direction:column; line-height:1.2;">
+
+                <span style="font-size:24px; font-weight:700;">
+                    Data Centre
+                </span>
+
+                <span style="margin-top:6px; display:inline-block;" class="sub-text">
+                    Smart Infrastructure Monitoring  
+                    Real-time tracking and optimization of data systems.
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- TEXT + IMAGE -->
+        <div class="vertical-content">
+
+            <div style="
+                width:300px;
+                font-size:16px;
+                line-height:1.6;
+            ">
+            </div>
+
+            <img 
+                src="https://res.cloudinary.com/dnodncslz/image/upload/v1775813326/OIP_1_kauxwo.jpg"
+                style="
+                    width:360px;
+                    height:200px;
                     object-fit:cover;
                     border-radius:12px;
                 ">
@@ -1493,78 +1633,79 @@ components.html("""
     </div>
 
 </div>
-   
-
-
-    <!-- DATA CENTre -->
-    <div style="padding-left:60px;">
-        <div style="
-            display:flex;
-            align-items:center;
-            gap:14px;
-            font-size:24px;
-            font-weight:700;
-            color:#4a6fa5;
-        ">
-            <i class="bi bi-database-fill" style="font-size:28px;"></i>
-            Data Centre
-        </div>
-    </div>
-<!-- LINE -->
-<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
 
 <!-- SEMICONDUCTOR -->
-<div style="padding-left:60px;">
-    <div style="
-        display:flex;
-        align-items:center;
-        gap:14px;
-        font-size:24px;
-        font-weight:700;
-        color:#4a6fa5;
-    ">
-        <i class="bi bi-cpu-fill" style="font-size:28px;"></i>
-        Semiconductor
+
+<div class="vertical-section">
+    <div class="vertical-row">
+
+        <div class="title" style="display:flex; gap:12px; font-size:24px; font-weight:700; color:#4a6fa5;">
+            <i class="bi bi-cpu-fill" style="font-size:28px; margin-top:4px;"></i>
+
+            <div style="display:flex; flex-direction:column;">
+                <span>Semiconductor</span>
+
+                <span class="sub-text" style="margin-top:6px;">
+                    Chip Design & Fabrication  
+                    Precision modeling for advanced semiconductor facilities.
+                </span>
+            </div>
+        </div>
+
+        <div class="vertical-content">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816240/OIP_2_aedd85.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+        </div>
+
     </div>
 </div>
 
-<!-- LINE -->
-<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+<div class="vertical-section">
+    <div class="vertical-row">
 
-<!--  STADIUM -->
-<div style="padding-left:60px;">
-    <div style="
-        display:flex;
-        align-items:center;
-        gap:14px;
-        font-size:24px;
-        font-weight:700;
-        color:#4a6fa5;
-    ">
-    <i class="bi bi-record-circle" style="font-size:28px; color:#4a6fa5;"></i>
-        Stadium
+        <div class="title" style="display:flex; gap:12px; font-size:24px; font-weight:700; color:#4a6fa5;">
+            <i class="bi bi-record-circle" style="font-size:28px; margin-top:4px;"></i>
+
+            <div style="display:flex; flex-direction:column;">
+                <span>Stadium</span>
+
+                <span class="sub-text" style="margin-top:6px;">
+                    Crowd Flow Optimization  
+                    Efficient planning for large-scale venues.
+                </span>
+            </div>
+        </div>
+
+        <div class="vertical-content">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816261/OIP_3_xizapr.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+        </div>
+
     </div>
 </div>
 
-<!-- LINE -->
-<div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
+<div class="vertical-section">
+    <div class="vertical-row">
 
-<!--  INDUSTRIAL -->
-<div style="padding-left:60px;">
-    <div style="
-        display:flex;
-        align-items:center;
-        gap:14px;
-        font-size:24px;
-        font-weight:700;
-        color:#4a6fa5;
-    ">
-        <i class="bi bi-building-gear" style="font-size:28px;"></i>
-        Industrial
+        <div class="title" style="display:flex; gap:12px; font-size:24px; font-weight:700; color:#4a6fa5;">
+            <i class="bi bi-building-gear" style="font-size:28px; margin-top:4px;"></i>
+
+            <div style="display:flex; flex-direction:column;">
+                <span>Industrial</span>
+
+                <span class="sub-text" style="margin-top:6px;">
+                    Process Optimization  
+                    Streamlining operations for industrial efficiency.
+                </span>
+            </div>
+        </div>
+
+        <div class="vertical-content">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816269/OIP_4_paiwph.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+        </div>
+
     </div>
 </div>
 
 
 
-</div>
-""", height=900)
+
+""", height=1800)
