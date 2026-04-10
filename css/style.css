@@ -1,0 +1,18 @@
+.airport-img {
+    opacity: 0;
+    transform: translate(-50%, -30%);
+    transition: all 0.4s ease;
+    position: absolute;
+    left: 75%;
+    top: 0;
+}
+
+.airport-row:hover + .airport-hover-area .airport-img {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.airport-row:hover + .airport-hover-area .airport-text {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}

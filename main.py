@@ -1225,41 +1225,169 @@ components.html(f"""
 components.html("""
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
-
 <style>
-.airport-img {
-    opacity: 0;
-    transform: translate(-50%, -30%);
-    transition: all 0.4s ease;
+.vertical-section {
+    position: relative;
+    padding: 25px 0;
+    margin-bottom: 20px;
+    height: 120px;        /* fixed height */
+    overflow: hidden;
+    border-radius: 12px;
+    transition: background 0.5s ease;
+}
+
+/* blue bar appears with pseudo-element */
+.vertical-section::before {
+    content: "";
     position: absolute;
-    left: 50%;
+    left: 0;
     top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #2c3e66, #5a7fcf);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 12px;
+    z-index: 0;
 }
 
-.airport-row:hover + .airport-hover-area .airport-img {
+.vertical-section:hover::before {
+    opacity: 1;   /* blue bar appears */
+}
+
+/* text above blue bar */
+.vertical-content, .title {
+    position: relative;
+    z-index: 1;
+    color: white; /* appears white on hover */
+}
+
+/* hide content initially */
+.vertical-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    position: absolute;
+    left: 320px;
+    top: 50%;
+    transform: translateY(-50%) translateX(30px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.4s ease;
+}
+.title span:last-child {
+    letter-spacing: 0.5px;
+    opacity: 0.85;
+}
+
+
+
+
+/* show content on hover */
+.vertical-section:hover .vertical-content {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    visibility: visible;
+    transform: translateY(-50%) translateX(0);
+}
+
+.vertical-content img {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.5s ease;
+}
+
+/* hover trigger */
+.vertical-section:hover .vertical-content img {
+    opacity: 1;
+    transform: translateX(0);
+    animation: imgSwingOnce 0.8s ease-out;
+}
+
+/* ONE-TIME LEFT-RIGHT SWING */
+@keyframes imgSwingOnce {
+    0%   { transform: translateX(0px) rotate(0deg); }
+    25%  { transform: translateX(0px) rotate(-4deg); }
+    60%  { transform: translateX(0px) rotate(3deg); }
+    100% { transform: translateX(0px) rotate(0deg); }
+}
+
+/* Airport icon + text becomes white on hover */
+.vertical-section:hover .title {
+    color: white !important;
+}
+
+/* icon specifically */
+.vertical-section:hover .title i {
+    color: white !important;
 }
 
 
 
 
+/* divider line */
+.vertical-section::after {
+    content: "";
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0,0,0,0.15);
+}
+/* make icon white on hover */
+.vertical-section:hover .title i {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+/* make icon white on hover */
+.vertical-section:hover .title i {
+    color: white !important;
+    transition: color 0.3s ease;
+}
 
+.vertical-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    padding-left: 80px;   /* increase a bit for balance */
+}
 
+.vertical-section:hover .title span:last-child {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+.sub-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4a6fa5;
 
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
 
+    height: 0;
+    overflow: hidden;
 
+    transition: all 0.3s ease;
+}
 
+/* show only on hover */
+.vertical-section:hover .sub-text {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 
+    height: auto;
+    color: white !important;
+}
 
 
 
 
 </style>
-
-
-
-
 
 <div style="
     width:100%;
@@ -1290,75 +1418,81 @@ components.html("""
         </p>
 
     </div>
+<div class="airport-section" style="
+    position:relative;
 
-    <!--  AIRPORT -->
- <div class="airport-row" style="margin-top:80px; position:relative;">
+    min-height:220px;
+    padding-bottom:20px 0;
+">
+<div class="vertical-section">
 
-    <!-- LEFT TEXT -->
-    <div style="
-        display:flex;
-        align-items:center;
-        gap:14px;
-        font-size:24px;
-        font-weight:700;
-        color:#4a6fa5;
-        padding-left:60px;
-    ">
-        <i class="bi bi-airplane-fill" style="
-            font-size:28px;
-            transform: rotate(20deg);
-        "></i>
-        Airport
+    <div class="vertical-row">
+
+        <!-- ICON + TITLE -->
+    <div class="title" style="
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    gap:12px;
+    font-size:24px;
+    font-weight:700;
+    color:#4a6fa5;
+">
+
+    <!-- ICON -->
+    <i class="bi bi-airplane-fill" style="
+        font-size:28px;
+        transform:rotate(20deg);
+        margin-top:4px;
+    "></i>
+
+    <!-- TEXT BLOCK -->
+    <div style="display:flex; flex-direction:column; line-height:1.2;">
+
+        <span style="font-size:24px; font-weight:700;">
+            Airport
+        </span>
+
+<span style="margin-top:6px; display:inline-block;" class="sub-text">
+    Clash Detection Identify and resolve conflicts between systems efficiently.
+
+</span>
+
+
+
+
     </div>
 
+</div>
+
+
+
+
+        <!-- TEXT + IMAGE -->
+        <div class="vertical-content">
+
+            <div style="
+                width:300px;
+                font-size:16px;
+                line-height:1.6;
+            ">
+                
+            </div>
+
+            <img 
+                src="https://res.cloudinary.com/dnodncslz/image/upload/v1775639362/OIP_hlipg2.jpg"
+                style="
+                    width:260px;
+                    height:160px;
+                    object-fit:cover;
+                    border-radius:12px;
+                ">
+        </div>
+
+    </div>
+
+</div>
    
-
-</div>
-             
-
-    <!-- LINE -->
-<div class="airport-hover-area" style="position:relative;">
-
-    <!-- LINE -->
-    <div style="margin:25px 60px; border-top:1px solid rgba(0,0,0,0.2);"></div>
-
-    <!-- IMAGE -->
-<div style="text-align:center;">
-    <img class="airport-img"
-         src="https://res.cloudinary.com/dnodncslz/image/upload/v1775639362/OIP_hlipg2.jpg"
-         style="
-            width:360px;
-            height:210px;
-            object-fit:cover;
-            border-radius:14px;
-
-            position:absolute;
-            left:50%;
-            transform:translate(-50%, -50%);
-            top:0;
-         ">
-</div> 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-</div>
-
 
 
     <!-- DATA CENTre -->
