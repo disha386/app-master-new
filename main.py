@@ -17,6 +17,7 @@ footer {visibility: hidden;}
     padding-left: 20px !important;
     padding-right: 20px !important;
 }
+.stVerticalBlock{background-color:#ffffff!important;}
 
 </style>
 """, unsafe_allow_html=True)
