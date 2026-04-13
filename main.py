@@ -1241,26 +1241,14 @@ components.html("""
 
 /* blue bar appears with pseudo-element */
 
-.vertical-section::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, #2c3e66, #5a7fcf);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    border-radius: 12px;
-    z-index: 1;
-}
+
 
 .vertical-section::before {
     content: "";
     position: absolute;
 
-    left: 40px;
-    right: 40px;
+    left: 10px;
+    right: 10px;
 
     top: 50%;
     height: 80%;   /* smaller initially */
@@ -1273,7 +1261,7 @@ components.html("""
     opacity: 0;
     transition: all 0.4s ease;
 
-    border-radius: 18px;
+    border-radius: 20px;
     z-index: 1;
 }
 
@@ -1292,7 +1280,6 @@ components.html("""
     position: relative;
     z-index: 5;
 }
-
 
 
 
@@ -1341,18 +1328,6 @@ components.html("""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* hover trigger */
 .vertical-section:hover .vertical-content img {
     opacity: 1;
@@ -1380,14 +1355,13 @@ components.html("""
 
 
 
-
 /* divider line */
 
 .vertical-section::after {
     content: "";
     position: absolute;
-    left: 60px;
-    right: 60px;
+    left: 10px;
+    right: 10px;
     bottom: 0;
     height: 1px;
     background: rgba(0,0,0,0.15);
@@ -1452,6 +1426,98 @@ components.html("""
     opacity: 0;   /*  hides line smoothly */
 }
 
+.vertical-content img {
+    height: 240px;   /* set once → applies everywhere */
+}
+
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 26px;
+    background: #002366;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+/* SIMPLE HOVER */
+.custom-btn:hover {
+    background: #1a3d8f;   /* slightly lighter blue */
+    transform: translateY(-3px);   /* slight lift */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ARROW MOVE */
+.custom-btn span {
+    transition: transform 0.3s ease;
+}
+
+.custom-btn:hover span {
+    transform: translateX(4px);
+}
+
+.expand-icon {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%) translateX(-10px);
+
+    width: 56px;   /* ⬅ bigger circle */
+    height: 56px;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e6e6e6;
+    color: #002366;
+
+    font-size: 26px;   /* ⬅ bigger arrow */
+
+    font-weight: bold;
+
+    z-index: 10;
+
+    transition: all 0.3s ease;
+}
+
+
+/* HOVER STATE */
+.vertical-section:hover .expand-icon {
+    background: rgba(255, 255, 255, 0.2); 
+    
+    color: #ffffff;
+    transform: translateY(-50%) translateX(-10px);
+}
+
+.vertical-content img {
+    height: 240px;
+    position: relative;
+    left: -140px;   /* control all images here */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1462,12 +1528,25 @@ components.html("""
 <div style="
     width:100%;
     background:#f5f5f5;
-    padding:30px 120px 120px 20px;
+    padding:40px 0 120px 0;
     margin-top:40px;
 ">
 
+    <div style="
+        max-width:1200px;
+        margin:0 auto;
+        padding:0 40px;
+    ">
+
+
+
+
+
+
+
+
     <!-- TOP CENTER HEADING -->
-    <div style="text-align:center; max-width:1000px; margin:0 auto;">
+    <div style="text-align:center; max-width:1000px; margin:0 auto 60px auto;">
 
         <h2 style="
             color:#002366;
@@ -1524,19 +1603,14 @@ components.html("""
         </span>
 
 <span style="margin-top:6px; display:inline-block;" class="sub-text">
-    Clash Detection Identify and resolve conflicts between systems efficiently.
+    Clash DetectionIdentify and resolve <br> conflicts between systems efficiently.
 
 </span>
 
 
-
-
     </div>
-
+  
 </div>
-
-
-
 
         <!-- TEXT + IMAGE -->
         <div class="vertical-content">
@@ -1553,22 +1627,21 @@ components.html("""
                 src="https://res.cloudinary.com/dnodncslz/image/upload/v1775639362/OIP_hlipg2.jpg"
                 style="
                     width:360px;
-                    height:200px;
+                    height:240px;
                     object-fit:cover;
                     border-radius:12px;
                     position: relative;
-                    right: -60px;   /*  pushes image OUTSIDE blue box */
+               
                     z-index: 6;
                     box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 
-
-
-
                 ">
+
+        
         </div>
 
     </div>
-
+    <div class="expand-icon">›</div>
 </div>
    
     <!-- DATA CENTre -->
@@ -1603,7 +1676,7 @@ components.html("""
 
                 <span style="margin-top:6px; display:inline-block;" class="sub-text">
                     Smart Infrastructure Monitoring  
-                    Real-time tracking and optimization of data systems.
+                    Real-time <br> tracking and optimization of data systems.
                 </span>
 
             </div>
@@ -1624,14 +1697,14 @@ components.html("""
                 src="https://res.cloudinary.com/dnodncslz/image/upload/v1775813326/OIP_1_kauxwo.jpg"
                 style="
                     width:360px;
-                    height:200px;
+                    height:240px;
                     object-fit:cover;
                     border-radius:12px;
                 ">
         </div>
 
     </div>
-
+    <div class="expand-icon">›</div>
 </div>
 
 <!-- SEMICONDUCTOR -->
@@ -1647,16 +1720,17 @@ components.html("""
 
                 <span class="sub-text" style="margin-top:6px;">
                     Chip Design & Fabrication  
-                    Precision modeling for advanced semiconductor facilities.
+                    Precision <br>modeling  for advanced semiconductor facilities.
                 </span>
             </div>
         </div>
 
         <div class="vertical-content">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816240/OIP_2_aedd85.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816240/OIP_2_aedd85.jpg" style="width:360px; height:240px; object-fit:cover; border-radius:12px;">
         </div>
 
     </div>
+    <div class="expand-icon">›</div>
 </div>
 
 <div class="vertical-section">
@@ -1670,16 +1744,17 @@ components.html("""
 
                 <span class="sub-text" style="margin-top:6px;">
                     Crowd Flow Optimization  
-                    Efficient planning for large-scale venues.
+                    Efficient <br> planning for large-scale venues.
                 </span>
             </div>
         </div>
 
         <div class="vertical-content">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816261/OIP_3_xizapr.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816261/OIP_3_xizapr.jpg" style="width:360px; height:240px; object-fit:cover; border-radius:12px;">
         </div>
 
     </div>
+    <div class="expand-icon">›</div>    
 </div>
 
 <div class="vertical-section">
@@ -1693,19 +1768,40 @@ components.html("""
 
                 <span class="sub-text" style="margin-top:6px;">
                     Process Optimization  
-                    Streamlining operations for industrial efficiency.
+                    Streamlining <br> operations for industrial efficiency.
                 </span>
             </div>
         </div>
 
         <div class="vertical-content">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816269/OIP_4_paiwph.jpg" style="width:360px; height:200px; object-fit:cover; border-radius:12px;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1775816269/OIP_4_paiwph.jpg" style="width:360px; height:240px; object-fit:cover; border-radius:12px;">
         </div>
 
     </div>
+    <div class="expand-icon">›</div>
+</div>
+
+<div style="text-align:center; margin-top:40px;">
+
+    <a href="#" class="custom-btn">
+        Explore All
+        <span style="
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            width:30px;
+            height:30px;
+            background:white;
+            border-radius:50%;
+            color:#002366;
+            font-size:16px;
+            font-weight:bold;
+        ">→</span>
+    </a>
+
+</div>
+
 </div>
 
 
-
-
-""", height=1800)
+""", height=2000)
