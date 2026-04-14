@@ -11,17 +11,21 @@ st.markdown("""
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
+
 .block-container {
     padding-top: 0rem !important;
-    margin-top: -20px;   /*  pulls everything upward */
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    margin-top: -20px;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
 }
 
-.stVerticalBlock{background-color:#ffffff!important;}
-
+.stVerticalBlock {
+    background-color:#ffffff !important;
+}
 </style>
 """, unsafe_allow_html=True)
+
+
 
 # ================= DATABASE =================
 conn = sqlite3.connect("portal.db", check_same_thread=False)
@@ -496,16 +500,21 @@ if len(images) >= 5:
 
 html = f"""
 <div style='
+    max-width:1200px;
+    margin:60px auto;
     display:flex;
     align-items:center;
     justify-content:space-between;
     gap:30px;
-    margin-top:60px;
-    width:100%;
+    padding:0 20px;
 '>
 
+
+
+
+
     <!-- LEFT TEXT -->
-    <div style="width:50%; margin-left:30px;">
+    <div style="width:50%;">
 
         <h2 style='color:#002366; font-size:34px; font-weight:700;'>
             Discover Pinnacle
@@ -560,7 +569,7 @@ Our 30+ years of expertise drive excellence in the Design, Preconstruction, Cons
     </div>
 
     <!-- RIGHT IMAGE -->
-    <div style='width:55%; position:relative;'>
+    <div style='width:50%; position:relative;'>
 
         <img src='data:image/webp;base64,{main_img}'
              style='width:100%; height:420px; object-fit:cover; border-radius:12px;' />
@@ -593,102 +602,305 @@ components.html(html, height=520)
 
 
 # ================= MOVING IMAGE BAR =================
-
-
-#  MOVING IMAGE BAR (PUT HERE)
 components.html("""
-<div style="
-    width:100%;
-    background:#e0e0e0;
-    border-radius:12px;
-    margin:60px 0;
-    position:relative;
-    box-shadow:0 8px 20px rgba(0,0,0,0.1);
-    padding:40px 25px 40px 25px;   /*  SAME LEFT PADDING */
-">
-
-    <!--  TITLE -->
-    <div style="
-        position:absolute;
-        top:20px;
-        left:25px;   /* SAME AS PADDING */
-        font-size:24px;
-        font-weight:700;
-        color:#002366;
-        font-family: Georgia, serif;
-    ">
-        Industry Associations
-    </div>
-
-    <!--  LOGO ALIGNMENT -->
-    <div style="
-        width:100%;
-        height:110px;
-        display:flex;
-        align-items:center;
-        overflow:hidden;
-    ">
-
-        <!-- MOVING LOGOS -->
-        <div style="
-            display:flex;
-            align-items:center;
-            gap:80px;
-            animation: scroll 15s linear infinite;
-        ">
-
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
-
-            <!-- repeat -->
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
-            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
-
-        </div>
-
-    </div>
-
-</div>
-
 <style>
 @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-100%); }
 }
 </style>
-""", height=260)
 
-st.markdown("""
 <div style="
-    width:100%;
-    text-align:center;
-    margin-top:60px;
-    font-size:34px;
-    font-family: Georgia, serif;
+    position:relative;
+    width:100vw;
+    left:50%;
+    transform:translateX(-50%);
+    background:#e0e0e0;
+    margin:60px 0;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    padding:40px 0;
+    overflow:hidden;
+">
+
+<!-- TEXT -->
+<div style="
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    left:30px;
+    font-size:24px;
     font-weight:700;
     color:#002366;
+    font-family: Georgia, serif;
+    z-index:5;
 ">
-    What We Do
+    Industry Associations
 </div>
-""", unsafe_allow_html=True)
 
-st.markdown("""
+<!-- INVISIBLE LINES -->
 <div style="
-    width:100%;
-    text-align:center;
-    margin-top:10px;
-    font-size:20px;
-    font-family:sans-serif;
-    color:#4a6fa5;   /*  light dark blue */
+    margin-left:320px;
+    margin-right:120px;
+    overflow:hidden;
 ">
-    Adhering to international construction codes and standards, our range of services includes the following.
-""",unsafe_allow_html=True)
+
+<!-- TRACK WRAPPER -->
+<div style="display:flex; width:max-content;">
+
+    <!-- TRACK 1 -->
+    <div style="
+        display:flex;
+        gap:60px;
+        animation: scroll 20s linear infinite;
+    ">
+
+        <!-- SET 1 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 2 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 3 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 4 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+    </div>
+
+    <!-- TRACK 2 (CLONE) -->
+    <div style="
+        display:flex;
+        gap:60px;
+        animation: scroll 20s linear infinite;
+    ">
+
+        <!-- SAME 4 SETS AGAIN -->
+
+        <!-- SET 1 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 2 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 3 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+        <!-- SET 4 -->
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774440686/ahk_u5d2h6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441251/npca_vypoo6.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441161/buildingsmart_d7yder.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774441027/building_mqyiow.webp" style="height:75px;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1774528765/stpi_fbnfw1.webp" style="height:75px;">
+
+    </div>
+
+</div>
+</div>
+</div>
+""", height=300)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ================= BIM SERVICES (NEW SECTION) =================
@@ -724,7 +936,7 @@ components.html(f"""
 <div style='
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:stretch;
     gap:40px;
     margin:40px auto;
     width:100%;
@@ -734,17 +946,17 @@ components.html(f"""
     box-sizing:border-box;
 '>
 
-
-
-    <!-- LEFT TEXT + BUTTON -->
+    <!-- LEFT TEXT -->
     <div style='
-    flex:1;
-    min-width:280px;
-    padding:10px 20px;
-    box-sizing:border-box;
-'>
-
-
+        flex:1;
+        min-width:280px;
+        padding:10px 20px;
+        box-sizing:border-box;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:flex-start;
+    '>
 
         <div style='
             color:#4a6fa5;
@@ -766,7 +978,6 @@ components.html(f"""
         reduce risks, and enhance overall project efficiency.
         </p>
 
-        <!-- CAPSULE BUTTON -->
         <a href="#" class="custom-btn">
             Know More
             <span style="
@@ -786,42 +997,36 @@ components.html(f"""
     </div>
 
     <!-- CENTER IMAGE -->
-   
-<!-- CENTER IMAGE -->
-<!-- CENTER IMAGE -->
-<div style="
-    flex:1;
-    min-width:280px;
-    padding:10px 20px;
-    box-sizing:border-box;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-">
-
-    <img src="{bim_image_url}" style="
-        width:100%;
-        max-width:320px;
-        height:320px;
-        object-fit:cover;
-        border-radius:12px;
-        display:block;
-        margin:auto;
-    "/>
-
-</div>
-
-
-
-    <!-- RIGHT SIDE WITH ICONS -->
     <div style="
-    flex:1;
-    min-width:280px;
-    padding:10px 20px;
-    box-sizing:border-box;
-">
+        flex:1;
+        min-width:280px;
+        padding:10px 20px;
+        box-sizing:border-box;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    ">
 
+        <img src="{bim_image_url}" style="
+            width:100%;
+            max-width:320px;
+            aspect-ratio: 1 / 1;
+            object-fit:cover;
+            border-radius:12px;
+        "/>
 
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div style="
+        flex:1;
+        min-width:280px;
+        padding:10px 20px;
+        box-sizing:border-box;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    ">
 
         <div style='font-size:17px; color:#333; font-weight:500;'>
 
@@ -855,8 +1060,144 @@ components.html(f"""
     </div>
 
 </div>
-
 """, height=420)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # ================= ENGINEERING DESIGN SECTION =================
@@ -967,15 +1308,14 @@ components.html(f"""
     align-items:center;
 ">
 
-    <img src="{eng_image_url}" style="
-        width:100%;
-        max-width:320px;
-        height:320px;
-        object-fit:cover;
-        border-radius:12px;
-        display:block;
-        margin:auto;
-    "/>
+
+<img src="{eng_image_url}" style="
+    width:100%;
+    max-width:320px;
+    aspect-ratio: 1 / 1;
+    object-fit:cover;
+    border-radius:12px;
+"/>
 
 </div>
 
@@ -992,10 +1332,6 @@ components.html(f"""
     flex-direction:column;
     justify-content:center;
 ">
-
-
-
-
 
 
     <div style='font-size:16.5px; color:#333;'>
@@ -1033,11 +1369,6 @@ components.html(f"""
 
 """, height=420)
    
-
-
-
-
-
  # ================= DIGITAL CONSTRUCTION SECTION =================
 
 digital_image_url = "https://res.cloudinary.com/dnodncslz/image/upload/v1774604275/digital_construction_pinnacle_infotech_mxz5kc.webp"
@@ -1207,20 +1538,6 @@ components.html(f"""
 """, height=420)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ###### DIGITAL TWIN
 digital_twin_image_url =" https://res.cloudinary.com/dnodncslz/image/upload/v1775560726/bim-vdc_consulting_pinnacle_infotech_xovez5.webp"
 ###### DIGITAL TWIN
@@ -1385,141 +1702,6 @@ components.html(f"""
 </div>
 
 """, height=420)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
