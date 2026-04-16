@@ -5,23 +5,34 @@ import streamlit.components.v1 as components
 import base64
 
 st.set_page_config(page_title="my webapp", layout="wide")
-##deploy hide
+
 st.markdown("""
 <style>
+
+/* ================= GLOBAL LAYOUT FIX ================= */
+html, body {
+    overflow-x: hidden;
+}
+
+/* remove Streamlit padding (VERY IMPORTANT) */
+.block-container {
+    padding-top: 0rem !important;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+    max-width: 100% !important;
+    margin-top: -20px;
+}
+
+/* ================= DEPLOY HIDE (YOUR SECTION) ================= */
 #MainMenu {visibility: hidden;}
 header {visibility: hidden;}
 footer {visibility: hidden;}
 
-.block-container {
-    padding-top: 0rem !important;
-    margin-top: -20px;
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
+/* background fix */
+.stVerticalBlock {
+    background-color: #ffffff !important;
 }
 
-.stVerticalBlock {
-    background-color:#ffffff !important;
-}
 </style>
 """, unsafe_allow_html=True)
 
@@ -2286,4 +2297,223 @@ components.html("""
 </div>
 
 
-""", height=2000)
+""", height=1300)
+
+
+st.markdown("""
+<div style="height:20px;"></div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<div style="
+    width:100%;
+    text-align:center;
+    margin-top:60px;
+    font-size:34px;
+    font-family: Georgia, serif;
+    font-weight:700;
+    color:#002366;
+">
+    Our Projects
+</div>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+<div style="
+    width:100%;
+    text-align:center;
+    margin-top:10px;
+    font-size:20px;
+    font-family:sans-serif;
+    color:#4a6fa5;
+">
+    Explore world-class projects that testify to our global industry expertise and commitment to crafting excellence.
+</div>
+""", unsafe_allow_html=True)
+
+
+
+
+####### PROJECT IMGES ####
+components.html("""
+<style>
+.wrapper {
+    width:100%;
+    margin:0;
+    display:flex;
+    overflow-x:auto;
+
+    gap:16px;              /* slight gap*/
+    padding:60px 16px;
+
+    box-sizing:border-box;
+    cursor:grab;
+    scroll-snap-type: none;
+}
+
+.wrapper::-webkit-scrollbar {
+    display:none;
+}
+
+
+.card {
+    flex: 0 0 32%;
+    scroll-snap-align: start;   /*  THIS CONTROLS HOW MANY IMAGES FIT */
+}
+
+.card img {
+    width: 100%;
+    height: 20vw;        /* scales with screen */
+    max-height: 240px;   /* limit */
+    min-height: 200px;   /* keep minimum */
+    object-fit: cover;
+    border-radius: 16px;
+    pointer-events: none;
+}
+
+
+/* zig-zag */
+.up { transform:translateY(-16px); }
+.down { transform:translateY(16px); }
+
+.wrapper:active {
+    cursor:grabbing;
+}
+</style>
+
+
+
+<div class="wrapper" id="dragArea">
+
+    <div class="card up"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171393/3d_bim_riyadh_metro_stations.jpg_bytbcb.webp"></div>
+    <div class="card down"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171445/new_orleans_international_airport-02.jpg_fy7hz4.webp"></div>
+    <div class="card up"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171484/legacy-cool-spring.jpg_jg0uab.webp"></div>
+    <div class="card down"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171521/lusail_stadium_afl_architects1.jpg_o2xuko.webp"></div>
+    <div class="card up"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171585/new-childrens-hospital.jpg_fj14hq.webp"></div>
+    <div class="card down"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171643/601-n-central_mghdva.jpg"></div>
+    <div class="card up"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776171712/facebook-datacenter3_vrhftd.webp"></div>
+
+</div>
+
+<script>
+const slider = document.getElementById("dragArea");
+
+//  Duplicate content (keeps same alignment automatically)
+slider.innerHTML += slider.innerHTML;
+
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    slider.style.cursor = "grabbing";
+});
+
+slider.addEventListener("mouseleave", () => {
+    isDown = false;
+    slider.style.cursor = "grab";
+});
+
+slider.addEventListener("mouseup", () => {
+    isDown = false;
+    slider.style.cursor = "grab";
+});
+
+slider.addEventListener("mousemove", (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 1.5;  // smoother
+    slider.scrollLeft = scrollLeft - walk;
+});
+
+//  Infinite loop without affecting alignment
+slider.addEventListener("scroll", () => {
+    const maxScroll = slider.scrollWidth / 2;
+
+    if (slider.scrollLeft >= maxScroll) {
+        slider.scrollLeft -= maxScroll;
+    }
+    if (slider.scrollLeft <= 0) {
+        slider.scrollLeft += maxScroll;
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""", height=340)
