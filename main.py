@@ -3389,3 +3389,82 @@ components.html("""
 
 </div>
 """, height=690)
+
+### latest update ###
+
+
+components.html("""
+<div style="text-align: center; margin: 20px 0;">
+
+    <h2 style="
+        color: #0b2a5b;
+        font-family: sans-serif;
+        font-weight: 600;
+        margin-bottom: 8px;
+    ">
+        Latest Updates
+    </h2>
+
+    <p style="
+        color: #3f5f8a;   /* light dark blue */
+        font-family: sans-serif;
+        font-size: 16px;
+        margin-top: 0;
+    ">
+        Your go-to hub for sharp industry insights, key event updates, and more.
+    </p>
+
+</div>
+""", height=150)
+
+### events ### 
+
+
+components.html("""
+<div style="padding: 10px 40px; font-family: sans-serif;">
+
+    <!-- TITLE -->
+    <h3 style="
+        color: #0b2a5b;
+        margin-bottom: 15px;
+        text-align: left;
+    ">
+        Blogs & Articles
+    </h3>
+
+    <!-- SECTION LIST -->
+    <div style="display: flex; flex-direction: column; gap: 0px;">
+
+        <div style="padding: 12px 0; color: #3f5f8a;">
+            Live Events
+        </div>
+        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+
+        <div style="padding: 12px 0; color: #3f5f8a;">
+            Industry Insights
+        </div>
+        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+
+        <div style="padding: 12px 0; color: #3f5f8a;">
+            Product Updates
+        </div>
+        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+
+        <div style="padding: 12px 0; color: #3f5f8a;">
+            Case Studies
+        </div>
+        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+
+        <div style="padding: 12px 0; color: #3f5f8a;">
+            Tutorials
+        </div>
+
+    </div>
+
+</div>
+""", height=320)
+
+
+
+### BESIDE IMAGE ##
+
