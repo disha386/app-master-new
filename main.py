@@ -3,6 +3,193 @@ import sqlite3
 import os
 import streamlit.components.v1 as components
 import base64
+# ---------------- STATE (ADD BELOW IMPORTS) ----------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 st.set_page_config(page_title="my webapp", layout="wide")
 
@@ -32,6 +219,32 @@ footer {visibility: hidden;}
 .stVerticalBlock {
     background-color: #ffffff !important;
 }
+
+
+/* ================= REMOVE EXTRA VERTICAL GAP ================= */
+div[data-testid="stVerticalBlock"] {
+    gap: 0.5rem !important;
+}
+
+/* remove spacing between markdown blocks */
+div[data-testid="stMarkdownContainer"] {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+/* tighten headings */
+h1, h2, h3, h4 {
+    margin-top: 0.2rem !important;
+    margin-bottom: 0.2rem !important;
+}
+
+/* remove extra space from components */
+iframe {
+    margin: 0 !important;
+}
+
+
+
 
 </style>
 """, unsafe_allow_html=True)
@@ -2447,73 +2660,370 @@ slider.addEventListener("scroll", () => {
 </script>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 """, height=340)
+
+##### BOTTON####
+
+st.markdown('''
+<div class="middle-btn">
+    <button class="know-more-btn">
+        <span>View All Projects</span>
+        <span class="arrow-circle">→</span>
+    </button>
+</div>
+
+<style>
+.middle-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.know-more-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 14px 10px 24px;
+    border-radius: 999px;
+    border: none;
+
+    background: #0A2A66;   /* rich dark blue */
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* white circle */
+.arrow-circle {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    color: #0A2A66;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* hover */
+.know-more-btn:hover {
+    background: #081F4D;   /* darker on hover */
+    transform: translateY(-2px);
+}
+
+.know-more-btn:hover .arrow-circle {
+    transform: translateX(4px);
+    transition: 0.3s;
+}
+</style>
+''', unsafe_allow_html=True)
+
+
+
+
+##### PEOPLE  #######
+components.html("""
+<style>
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 180px;   /* increased spacing */
+    width: 100%;
+    flex-wrap: nowrap;
+    padding: 40px 0;  /* gives breathing space */
+}
+
+/* TEXT BOX */
+.text-box {
+    max-width:750px;   /*  bigger text area */
+    min-height:240px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* TEXT */
+#text {
+    display:block;
+    transform: translateX(0px);
+    opacity: 1;
+    transition: transform 0.45s ease, opacity 0.45s ease;
+    will-change: transform, opacity;
+    font-size: 18px;   /*  bigger text */
+    line-height: 1.6;
+}
+
+/* DECK */
+.deck {
+    width:340px;    /*  increased */
+    height:400px;   /*  increased */
+    position:relative;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+/* STACKED CARDS */
+.card {
+    position:absolute;
+    width:260px;   /* increased */
+    height:340px;  /*  increased */
+}
+
+.card1 { transform: translate(0px,0px) rotate(-2deg); z-index:5; }
+.card2 { transform: translate(8px,3px) rotate(1deg); z-index:4; }
+.card3 { transform: translate(16px,6px) rotate(3deg); z-index:3; }
+.card4 { transform: translate(24px,9px) rotate(-1deg); z-index:2; }
+.card5 { transform: translate(32px,12px) rotate(2deg); z-index:1; }
+
+.card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:14px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.30);
+}
+
+/* BUTTONS */
+.controls {
+    margin-top:18px;
+}
+
+.btn {
+    border:none;
+    background:#0A2A66;
+    color:white;
+    padding:8px 14px;
+    margin-right:10px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:14px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+<div class="wrapper">
+
+    <div class="text-box">
+        <h3>What people are Saying</h3>
+
+        <p id="text"></p>
+
+        <div class="controls">
+            <button class="btn" onclick="prev()">&lt;</button>
+            <button class="btn" onclick="next()">&gt;</button>
+        </div>
+    </div>
+
+    <div class="deck" id="deck"></div>
+
+</div>
+
+<script>
+
+const data = [
+
+{
+text:`Jessica Resta
+Our Pinnacle team has been very helpful.
+They deliver high quality work.
+Always meet deadlines.
+Communication is excellent.`,
+html: `
+<div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
+<div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
+<div class="card card3"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
+<div class="card card4"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
+<div class="card card5"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
+`
+},
+
+{
+text:`Leonidas Tzevelekas
+The team understands requirements deeply.
+Communication is smooth and fast.
+Execution is very professional.
+Work quality is strong.`,
+html: `
+<div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
+<div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
+<div class="card card3"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
+<div class="card card4"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
+<div class="card card5"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
+`
+},
+
+{
+text:`Keith Rodriguez
+They always meet deadlines.
+Quality is consistent.
+Highly reliable team.
+Strong technical understanding.`,
+html: `
+<div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
+<div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
+<div class="card card3"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
+<div class="card card4"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
+<div class="card card5"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
+`
+},
+
+{
+text:`Garnette Rouse
+Excellent coordination across teams.
+Very professional workflow.
+Strong communication system.
+Smooth project handling.`,
+html: `
+<div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
+<div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
+<div class="card card3"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
+<div class="card card4"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
+<div class="card card5"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
+`
+},
+
+{
+text:`Stewart Bohrer
+Very dependable and consistent delivery.
+Strong attention to detail.
+Great collaboration experience.
+Highly professional approach.`,
+html: `
+<div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
+<div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
+<div class="card card3"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
+<div class="card card4"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
+<div class="card card5"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
+`
+}
+
+];
+
+let index = 0;
+
+function animateTextChange(newIndex){
+
+    const textEl = document.getElementById("text");
+    const deckEl = document.getElementById("deck");
+
+    textEl.style.transform = "translateX(-120px)";
+    textEl.style.opacity = "0";
+
+    setTimeout(() => {
+
+        index = newIndex;
+
+        textEl.innerText = data[index].text;
+        deckEl.innerHTML = data[index].html;
+
+        textEl.style.transition = "none";
+        textEl.style.transform = "translateX(120px)";
+        textEl.style.opacity = "0";
+
+        void textEl.offsetWidth;
+
+        setTimeout(() => {
+            textEl.style.transition = "transform 0.45s ease, opacity 0.45s ease";
+            textEl.style.transform = "translateX(0px)";
+            textEl.style.opacity = "1";
+        }, 20);
+
+    }, 200);
+}
+
+function next(){
+    animateTextChange((index + 1) % data.length);
+}
+
+function prev(){
+    animateTextChange((index - 1 + data.length) % data.length);
+}
+
+animateTextChange(0);
+
+</script>
+""", height=550)
+
+##### Say Hello ########
+st.markdown(
+"""
+<style>
+.cta-box {
+    width: 100%;
+    background: #0A2A66;
+    padding: 80px 20px;
+    border-radius: 24px;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+}
+.cta-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.cta-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+</style>
+
+<div class="cta-box">
+    <div class="cta-title">Say Hello</div>
+    <div class="cta-subtitle">
+        We’d love to hear from you and help you build something amazing
+    </div>
+</div>
+""",
+unsafe_allow_html=True
+)
+
+#### more about##
+st.markdown("""
+<h3 style="
+    color:#0A2A66;
+    font-family:sans-serif;
+    font-size:18px;
+    font-weight:600;
+    margin:5px 0 5px 0;
+    text-align:center;
+">
+More About Pinnacle
+</h3>
+""", unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### 3 Bar #####
+
