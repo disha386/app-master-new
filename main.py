@@ -2853,20 +2853,14 @@ components.html("""
     transition: 0.3s ease;
 }
 
-.tab-btn:hover {
-    background-color: #2f5a9a;
-}
-
-.active-tab {
-    background-color: #2f5a9a !important;
-}
+.tab-btn:hover { background-color: #2f5a9a; }
+.active-tab { background-color: #2f5a9a !important; }
 
 .no-padding {
     padding-left: 0 !important;
     padding-right: 0 !important;
 }
 
-/* NEW: SIDE-BY-SIDE VERTICAL TABS */
 .grey-card {
     background: #e5e7eb;
     border-radius: 14px;
@@ -2895,7 +2889,6 @@ components.html("""
     font-size: 13px;
     color: #555;
 }
-
 </style>
 
 <div class="container mt-4">
@@ -2910,68 +2903,104 @@ components.html("""
     <!-- CONTENT -->
     <div class="row mt-4 gx-3 justify-content-center">
 
-        <!-- TEXT + CARDS -->
+        <!-- LEFT SIDE (TEXT + CARDS) -->
         <div class="col-auto no-padding">
-            
-            <div id="products-text" class="d-none p-3 bg-light rounded" style="width:620px; text-align:left;">
-                Beyond our core services, Pinnacle is a proud Autodesk Learning and Reselling partner and also delivers exclusive CAD support to HP. Being an Authorized Training Centre (ATC), our sessions comply with Autodesk’s training benchmarks. As a valued partner of HP, Pinnacle’s expertise in accurately converting 2D CAD files or 3D models into 2D DXF files powers HP SitePrint’s core operations.
+
+            <!-- PRODUCTS -->
+            <div id="products" class="tab-section d-none" style="width:620px;">
+                <div class="p-3 bg-light rounded text-left">
+                    The workforce at Pinnacle is proficient in software platforms spanning the entire construction lifecycle. They include software for design, 3D modeling/rendering, BIM modeling/fabrication, CAD drafting, and Common Data Environment. Using these software tools, we implement advanced workflows that streamline interdisciplinary coordination, facilitate proactive clash resolution, and help clients achieve the best-in-class outputs.
+                </div>
+
+                <div style="display:flex; gap:12px; margin-top:14px;">
+                    <div class="grey-card"><div class="title">Product 1</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Product 2</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Product 3</div><div class="desc">Desc</div></div>
+                </div>
             </div>
 
-            <!-- NEW: 3 SIDE-BY-SIDE CARDS -->
-            <div id="products-bars" class="d-none" style="width:620px;">
+            <!-- SOLUTIONS -->
+            <div id="solutions" class="tab-section d-none" style="width:620px;">
+                <div class="p-3 bg-light rounded text-left">
+                    Beyond our core services, Pinnacle is a proud Autodesk Learning and Reselling partner and also delivers exclusive CAD support to HP. Being an Authorized Training Centre (ATC), our sessions comply with Autodesk’s training benchmarks. As a valued partner of HP, Pinnacle’s expertise in accurately converting 2D CAD files or 3D models into 2D DXF files powers HP SitePrint’s core operations.
+
+
+
+                </div>
+
                 <div style="display:flex; gap:12px; margin-top:14px;">
+                    <div class="grey-card"><div class="title">Solution 1</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Solution 2</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Solution 3</div><div class="desc">Desc</div></div>
+                </div>
+            </div>
 
-                    <div class="grey-card">
-                        <div class="title">Product 1</div>
-                        <div class="desc">Integrate PiVDC, an innovation of Pinnacle, into your daily workflow to automate repetitive tasks.</div>
-                    </div>
+            <!-- SOFTWARE -->
+            <div id="software" class="tab-section d-none" style="width:620px;">
+                <div class="p-3 bg-light rounded text-left">
+                    The workforce at Pinnacle is proficient in software platforms spanning the entire construction lifecycle. They include software for design, 3D modeling/rendering, BIM modeling/fabrication, CAD drafting, and Common Data Environment. Using these software tools, we implement advanced workflows that streamline interdisciplinary coordination, facilitate proactive clash resolution, and help clients achieve the best-in-class outputs.
 
-                    <div class="grey-card">
-                        <div class="title">Product 2</div>
-                        <div class="desc">A product of Pinnacle, InnoMaint integrates with Digital Twins for top-tier tech-driven facility management.</div>
-                    </div>
 
-                    <div class="grey-card">
-                        <div class="title">Product 3</div>
-                        <div class="desc">Need a customized plugin? Share your requirements and kickstart the development process.</div>
-                    </div>
 
+
+
+                </div>
+
+                <div style="display:flex; gap:12px; margin-top:14px;">
+                    <div class="grey-card"><div class="title">Software 1</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Software 2</div><div class="desc">Desc</div></div>
+                    <div class="grey-card"><div class="title">Software 3</div><div class="desc">Desc</div></div>
                 </div>
             </div>
 
         </div>
 
-        <!-- IMAGE -->
+        <!-- RIGHT IMAGE -->
         <div class="col-auto no-padding">
-            
-<div id="products-image" class="d-none text-center ms-3" style="width:420px;">
-    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776344032/our_products_2_g6lnrn.webp" 
-         style="width:100%; height:325px; object-fit:cover; border-radius:10px;">
+
+<div id="products-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
+    <div style="height:100%; display:flex;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776344032/our_products_2_g6lnrn.webp"
+             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+    </div>
 </div>
+
+<div id="solutions-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
+    <div style="height:100%; display:flex;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776411327/our_specilized_solutions_hv8egs.webp"
+             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+    </div>
+</div>
+
+
+<div id="software-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
+    <div style="height:100%; display:flex;">
+        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776411367/software_we_use_2_rjrfyh.webp"
+             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+    </div>
+</div>
+
+            
+
 
 
 
         </div>
 
     </div>
-
 </div>
 
 <script>
 function showTab(tabId, btn) {
 
-    document.getElementById("products-text").classList.add("d-none");
-    document.getElementById("products-image").classList.add("d-none");
-    document.getElementById("products-bars").classList.add("d-none");
+    document.querySelectorAll('.tab-section').forEach(e => e.classList.add("d-none"));
+    document.querySelectorAll('.tab-img').forEach(e => e.classList.add("d-none"));
 
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
-    btn.classList.add('active-tab');
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove("active-tab"));
+    btn.classList.add("active-tab");
 
-    if (tabId === "products") {
-        document.getElementById("products-text").classList.remove("d-none");
-        document.getElementById("products-image").classList.remove("d-none");
-        document.getElementById("products-bars").classList.remove("d-none");
-    }
+    document.getElementById(tabId).classList.remove("d-none");
+    document.getElementById(tabId + "-img").classList.remove("d-none");
 }
 </script>
-""", height=600)
+""", height=700)
