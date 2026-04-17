@@ -3003,7 +3003,7 @@ function showTab(tabId, btn) {
     document.getElementById(tabId + "-img").classList.remove("d-none");
 }
 </script>
-""", height=600)
+""", height=530)
 
 
 #### bar#### 
@@ -3022,7 +3022,7 @@ components.html("""
     <!-- LEFT CENTER LABEL -->
     <div style="
         position: absolute;
-        left: 20px;
+        left: 40px;
         top: 50%;
         transform: translateY(-50%);
         font-size: 22px;
@@ -3100,3 +3100,292 @@ components.html("""
 
 </div>
 """, height=280)
+
+##### GLOBAL PRESENCE####
+
+components.html("""
+<div style="
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    font-family: sans-serif;
+    color: #1f3f7a;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 1px;
+">
+    Global Presence
+</div>
+""", height=80)
+
+### GRAY BAR####
+
+components.html("""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div style="
+    width: 100%;
+    background: #e5e7eb;
+    padding: 60px 20px;
+    margin-top: 40px;
+">
+
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- LEFT SIDE (STYLISH BLOCKS) -->
+            <div class="col-md-6" style="font-family: 'Segoe UI', sans-serif;">
+
+                <!-- BLOCK 1 -->
+                <div style="margin-bottom: 32px;">
+                    <div style="
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-bottom: 6px;
+                    ">
+                        <div style="
+                            width: 6px;
+                            height: 22px;
+                            background: #1f3f7a;
+                            border-radius: 3px;
+                        "></div>
+
+                        <div style="
+                            font-size: 22px;
+                            font-weight: 800;
+                            color: #1f3f7a;
+                            letter-spacing: 0.5px;
+                        ">
+                            Pinnacle Infotech
+                        </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: #444; font-weight: 500;">
+                        3250 Bloor Street West, East Tower, Unit 600, Toronto, Ontario, M8X2X9
+
+Mr. Subhojit Sarkar
+
+ssarkar@pinnacleinfotech.com
+
++1 437 782 0030, +1 680 210 9909
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- BLOCK 2 -->
+                <div style="margin-bottom: 32px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                        <div style="width: 6px; height: 22px; background: #1f3f7a; border-radius: 3px;"></div>
+                        <div style="font-size: 22px; font-weight: 800; color: #1f3f7a; letter-spacing: 0.5px;">
+                            Pinnacle Infotech
+                        </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: #444; font-weight: 500;">
+                        6065 Roswell Rd NE #625, Atlanta, GA 30328
+
+Mr. Samrat Mallick
+
+samratm@pinnacleinfotech.com
+
++1 832 818 1253
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- BLOCK 3 -->
+                <div style="margin-bottom: 32px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                        <div style="width: 6px; height: 22px; background: #1f3f7a; border-radius: 3px;"></div>
+                        <div style="font-size: 22px; font-weight: 800; color: #1f3f7a; letter-spacing: 0.5px;">
+                            Pinnacle Infotech
+                        </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: #444; font-weight: 500;">
+                         6065 Roswell Rd NE #625, Atlanta, GA 30328
+
+Mr. Samrat Mallick
+
+samratm@pinnacleinfotech.com
+
++1 832 818 1253
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- BLOCK 4 -->
+                <div style="margin-bottom: 32px;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                        <div style="width: 6px; height: 22px; background: #1f3f7a; border-radius: 3px;"></div>
+                        <div style="font-size: 22px; font-weight: 800; color: #1f3f7a; letter-spacing: 0.5px;">
+                            Pinnacle Infotech
+                        </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: #444; font-weight: 500;">
+                        25 N 14th Street, Suite # 670, San Jose, CA – 95112
+
+Mr. Nikhil Varandani
+
+nvarandani@pinnacleinfotech.com
+
++1 (832) 874-2798
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <!-- BLOCK 5 -->
+                <div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                        <div style="width: 6px; height: 22px; background: #1f3f7a; border-radius: 3px;"></div>
+                        <div style="font-size: 22px; font-weight: 800; color: #1f3f7a; letter-spacing: 0.5px;">
+                            Pinnacle Infotech
+                        </div>
+                    </div>
+
+                    <div style="font-size: 13px; color: #444; font-weight: 500;">
+                        50 Sugar Creek Center Blvd, Suite #350, Sugar Land, TX 77478
+
+                        Mr. B. Todd
+
+                        btodi@pinnacleinfotech.com
+
+                        +1 713 780 2135, +1 437 782 0030, +1 713 780 8784
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT SIDE (BIG IMAGE) -->
+            <div class="col-md-6 d-flex align-items-center justify-content-center"
+                 style="overflow: visible;">
+
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776421786/download_vnigvb.png" style="
+                    width: 100%;
+                    max-width: 500px;
+                    height: auto;
+                    border-radius: 14px;
+                    object-fit: contain;
+                    display: block;
+                ">
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+""", height=630)
+
+#### IMAGE#### 
+
+components.html("""
+<div style="
+    width: 100%;
+    margin-top: 40px;
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+">
+
+    <!-- BACKGROUND IMAGE -->
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776424759/home-career-bgimg_kz52zt.webp" style="
+        width: 100%;
+        height: 630px;
+        object-fit: cover;
+        display: block;
+    ">
+
+    <!-- BIG CENTER BLUE TAB -->
+    <div style="
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #3a66ab;
+    padding: 60px 90px;
+    border-radius: 18px;
+    min-width: 450px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+">
+
+    <!-- TEXT -->
+    <div style="
+        color: white;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        font-family: sans-serif;
+        letter-spacing: 0.5px;
+    ">
+        Grow At Pinnacle
+    </div>
+
+    <!-- BUTTON -->
+    <div style="
+        background: white;
+        color: #3a66ab;
+        padding: 18px 40px;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 18px;
+        cursor: pointer;
+        white-space: nowrap;
+    ">
+        View all opportunities
+    </div>
+
+</div>
+
+
+
+
+</div>
+""", height=690)
