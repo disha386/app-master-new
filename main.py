@@ -2964,6 +2964,7 @@ animateTextChange(0);
 """, height=550)
 
 ##### Say Hello ########
+
 st.markdown(
 """
 <style>
@@ -3000,6 +3001,8 @@ unsafe_allow_html=True
 )
 
 #### more about##
+
+
 st.markdown("""
 <h3 style="
     color:#0A2A66;
@@ -3015,15 +3018,43 @@ More About Pinnacle
 
 
 
-
-
-
-
-
-
-
-
-
-
 #### 3 Bar #####
+
+st.markdown("""
+<style>
+.nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.nav-box {
+    background-color: #2c4f8f; 
+    height: 65px;
+    width: 430px;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+
+    transition: 0.3s ease;
+}
+
+.nav-box:hover {
+    background-color:  #243f73;
+}
+</style>
+
+<div class="nav-container">
+    <div class="nav-box">Our Products</div>
+    <div class="nav-box">Our Specialized Solutions</div>
+    <div class="nav-box">Software We Use</div>
+</div>
+""", unsafe_allow_html=True)
 
