@@ -6,191 +6,6 @@ import base64
 # ---------------- STATE (ADD BELOW IMPORTS) ----------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 st.set_page_config(page_title="my webapp", layout="wide")
 
 st.markdown("""
@@ -3019,42 +2834,144 @@ More About Pinnacle
 
 
 #### 3 Bar #####
+#### OUR PRODUCTS #### 
 
-st.markdown("""
+components.html(""" 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
-.nav-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.nav-box {
-    background-color: #2c4f8f; 
-    height: 65px;
-    width: 430px;
-    border-radius: 8px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
+.tab-btn {
+    background-color: #3a66ab;
     color: white;
+    height: 70px;
+    min-width: 340px;
+    padding: 0 50px;
+    border-radius: 12px;
+    font-size: 18px;
     font-weight: 600;
-    font-size: 15px;
-
+    border: none;
     transition: 0.3s ease;
 }
 
-.nav-box:hover {
-    background-color:  #243f73;
+.tab-btn:hover {
+    background-color: #2f5a9a;
 }
+
+.active-tab {
+    background-color: #2f5a9a !important;
+}
+
+.no-padding {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* NEW: SIDE-BY-SIDE VERTICAL TABS */
+.grey-card {
+    background: #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    flex: 1;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.grey-card:hover {
+    background: #dbe1e8;
+    transform: translateY(-3px);
+}
+
+.grey-card .title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.grey-card .desc {
+    font-size: 13px;
+    color: #555;
+}
+
 </style>
 
-<div class="nav-container">
-    <div class="nav-box">Our Products</div>
-    <div class="nav-box">Our Specialized Solutions</div>
-    <div class="nav-box">Software We Use</div>
-</div>
-""", unsafe_allow_html=True)
+<div class="container mt-4">
 
+    <!-- TABS -->
+    <div class="d-flex justify-content-center gap-3 flex-wrap text-center">
+        <button class="tab-btn" onclick="showTab('products', this)">Our Products</button>
+        <button class="tab-btn" onclick="showTab('solutions', this)">Our Specialized Solutions</button>
+        <button class="tab-btn" onclick="showTab('software', this)">Software We Use</button>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row mt-4 gx-3 justify-content-center">
+
+        <!-- TEXT + CARDS -->
+        <div class="col-auto no-padding">
+            
+            <div id="products-text" class="d-none p-3 bg-light rounded" style="width:620px; text-align:left;">
+                Beyond our core services, Pinnacle is a proud Autodesk Learning and Reselling partner and also delivers exclusive CAD support to HP. Being an Authorized Training Centre (ATC), our sessions comply with Autodesk’s training benchmarks. As a valued partner of HP, Pinnacle’s expertise in accurately converting 2D CAD files or 3D models into 2D DXF files powers HP SitePrint’s core operations.
+            </div>
+
+            <!-- NEW: 3 SIDE-BY-SIDE CARDS -->
+            <div id="products-bars" class="d-none" style="width:620px;">
+                <div style="display:flex; gap:12px; margin-top:14px;">
+
+                    <div class="grey-card">
+                        <div class="title">Product 1</div>
+                        <div class="desc">Integrate PiVDC, an innovation of Pinnacle, into your daily workflow to automate repetitive tasks.</div>
+                    </div>
+
+                    <div class="grey-card">
+                        <div class="title">Product 2</div>
+                        <div class="desc">A product of Pinnacle, InnoMaint integrates with Digital Twins for top-tier tech-driven facility management.</div>
+                    </div>
+
+                    <div class="grey-card">
+                        <div class="title">Product 3</div>
+                        <div class="desc">Need a customized plugin? Share your requirements and kickstart the development process.</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- IMAGE -->
+        <div class="col-auto no-padding">
+            
+<div id="products-image" class="d-none text-center ms-3" style="width:420px;">
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776344032/our_products_2_g6lnrn.webp" 
+         style="width:100%; height:325px; object-fit:cover; border-radius:10px;">
+</div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function showTab(tabId, btn) {
+
+    document.getElementById("products-text").classList.add("d-none");
+    document.getElementById("products-image").classList.add("d-none");
+    document.getElementById("products-bars").classList.add("d-none");
+
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active-tab'));
+    btn.classList.add('active-tab');
+
+    if (tabId === "products") {
+        document.getElementById("products-text").classList.remove("d-none");
+        document.getElementById("products-image").classList.remove("d-none");
+        document.getElementById("products-bars").classList.remove("d-none");
+    }
+}
+</script>
+""", height=600)
