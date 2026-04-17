@@ -3003,4 +3003,100 @@ function showTab(tabId, btn) {
     document.getElementById(tabId + "-img").classList.remove("d-none");
 }
 </script>
-""", height=700)
+""", height=600)
+
+
+#### bar#### 
+components.html("""
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div style="
+    width: 100%;
+    background: linear-gradient(135deg, #4a77c2, #1f3f7a);
+    padding: 50px 20px;
+    margin-top: 40px;
+    border-radius: 18px;
+    position: relative;
+">
+
+    <!-- LEFT CENTER LABEL -->
+    <div style="
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 22px;
+        font-weight: 700;
+        color: white;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    ">
+        Our CSR
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center g-3">
+
+            <!-- CARD 1 -->
+            <div class="col-md-5">
+                <div class="d-flex align-items-center bg-white rounded-4 shadow-sm p-3"
+                     style="height: 130px;">
+
+                    <div class="me-3">
+                        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776418591/swabhimaan-logo_l1u6ef.webp" style="
+                            width: 85px;
+                            height: 85px;
+                            object-fit: contain;
+                            background: #f1f1f1;
+                            padding: 6px;
+                            border-radius: 10px;
+                        ">
+                    </div>
+
+                    <div>
+                        <div style="
+                            font-size: 13px;
+                            font-weight: 600;
+                            color: #333;
+                        ">
+                            Through swaviman we support the education and well being of overlooked community.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-5">
+                <div class="d-flex align-items-center bg-white rounded-4 shadow-sm p-3"
+                     style="height: 130px;">
+
+                    <div class="me-3">
+                        <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776418654/ankuran-logo_xeut4l.webp" style="
+                            width: 85px;
+                            height: 85px;
+                            object-fit: contain;
+                            background: #f1f1f1;
+                            padding: 6px;
+                            border-radius: 10px;
+                        ">
+                    </div>
+
+                    <div>
+                        <div style="
+                            font-size: 13px;
+                            font-weight: 600;
+                            color: #333;
+                        ">
+                            Nurturing the young minds to become innovators through experiential science learning.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+""", height=280)
