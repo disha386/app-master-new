@@ -3749,27 +3749,140 @@ align-items: flex-start;
     gap: 20px;
 ">
 
-    <div style="cursor:pointer;">About</div>
-    <div style="cursor:pointer;">Consulting Services</div>
-    <div style="cursor:pointer;">Verticals</div>
-    <div style="cursor:pointer;">Resources</div>
-    <div style="cursor:pointer;">Markets</div>
-    <div style="cursor:pointer;">BIM Services</div>
+    <!-- ABOUT COLUMN -->
+<div style="min-width: 180px;">
+
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        About
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">About Pinnacle</div>
+        <div style="cursor:pointer;">Pinnacle Advantage</div>
+        <div style="cursor:pointer;">Our Team</div>
+        <div style="cursor:pointer;">Partnerships</div>
+        <div style="cursor:pointer;">Awards and Milestones</div>
+    </div>
+
+</div>
+
+<div style="min-width: 180px;">
+
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        Consulting Services
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">Strategy Consulting</div>
+        <div style="cursor:pointer;">Digital Transformation</div>
+        <div style="cursor:pointer;">BIM Consulting</div>
+        <div style="cursor:pointer;">Project Advisory</div>
+    </div>
+
+</div>
+
+<div style="min-width: 180px;">
+
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        Verticals
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">Architecture</div>
+        <div style="cursor:pointer;">Construction</div>
+        <div style="cursor:pointer;">Infrastructure</div>
+        <div style="cursor:pointer;">Real Estate</div>
+    </div>
+
+</div>
+
+<div style="min-width: 180px;">
+
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        Resources
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">Blogs</div>
+        <div style="cursor:pointer;">Case Studies</div>
+        <div style="cursor:pointer;">Whitepapers</div>
+        <div style="cursor:pointer;">Guides</div>
+    </div>
 
 </div>
 
 
+<div style="min-width: 180px;">
 
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        Markets
+    </div>
 
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">India</div>
+        <div style="cursor:pointer;">Middle East</div>
+        <div style="cursor:pointer;">Europe</div>
+        <div style="cursor:pointer;">USA</div>
+    </div>
 
+</div>
 
+<div style="min-width: 180px;">
 
+    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+        BIM Services
+    </div>
 
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 1.8;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+        <div style="cursor:pointer;">3D BIM Modeling</div>
+        <div style="cursor:pointer;">Clash Detection</div>
+        <div style="cursor:pointer;">Scan to BIM</div>
+        <div style="cursor:pointer;">BIM Coordination</div>
+    </div>
 
-
-
-
-
+</div>
 
 
 
