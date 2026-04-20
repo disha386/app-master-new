@@ -3469,7 +3469,7 @@ components.html("""
         width: 100%;
         background: #0b2a5b;
         border-radius: 30px;
-        min-height: 980px;
+        min-height: 1000px;
         padding: 60px;
         box-sizing: border-box;
         font-family: sans-serif;
@@ -3791,6 +3791,8 @@ align-items: flex-start;
         <div style="cursor:pointer;">Digital Transformation</div>
         <div style="cursor:pointer;">BIM Consulting</div>
         <div style="cursor:pointer;">Project Advisory</div>
+        <div style="cursor:pointer;">Sustainability Consulting</div>
+        <div style="cursor:pointer;">Risk Management</div>
     </div>
 
 </div>
@@ -3813,6 +3815,8 @@ align-items: flex-start;
         <div style="cursor:pointer;">Construction</div>
         <div style="cursor:pointer;">Infrastructure</div>
         <div style="cursor:pointer;">Real Estate</div>
+        <div style="cursor:pointer;">Industrial</div>
+        <div style="cursor:pointer;">stadium</div>
     </div>
 
 </div>
@@ -3835,6 +3839,7 @@ align-items: flex-start;
         <div style="cursor:pointer;">Case Studies</div>
         <div style="cursor:pointer;">Whitepapers</div>
         <div style="cursor:pointer;">Guides</div>
+        <div style="cursor:pointer;">publications</div>
     </div>
 
 </div>
@@ -3858,6 +3863,8 @@ align-items: flex-start;
         <div style="cursor:pointer;">Middle East</div>
         <div style="cursor:pointer;">Europe</div>
         <div style="cursor:pointer;">USA</div>
+        <div style="cursor:pointer;">Japan</div>
+        <div style="cursor:pointer;">Australia</div>
     </div>
 
 </div>
@@ -3883,6 +3890,184 @@ align-items: flex-start;
     </div>
 
 </div>
+
+<!-- OUR PRODUCTS FOOTER SECTION -->
+<div style="margin-top: 60px;">
+
+    <!-- MAIN HEADING -->
+    <div style="
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        margin-bottom: 14px;
+    ">
+        Our Products
+    </div>
+
+    <!-- SUB ITEMS (VERTICAL) -->
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+
+        <div style="cursor:pointer;">BIM Modeling Tools</div>
+        <div style="cursor:pointer;">Clash Detection Suite</div>
+        <div style="cursor:pointer;">CAD Automation Tools</div>
+       
+
+    </div>
+
+</div>
+
+<!-- PORTFOLIO FOOTER SECTION -->
+<div style="margin-top: 40px;">
+
+    <div style="
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        margin-bottom: 14px;
+    ">
+        Portfolio
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+
+        <div style="cursor:pointer;">Residential Projects</div>
+        <div style="cursor:pointer;">Commercial Buildings</div>
+        <div style="cursor:pointer;">Infrastructure Works</div>
+      
+    </div>
+
+</div>
+
+
+<!-- CAREERS FOOTER SECTION -->
+<div style="margin-top: 40px;">
+
+    <div style="
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        margin-bottom: 14px;
+    ">
+        Careers
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+
+        <div style="cursor:pointer;">Current Openings</div>
+        <div style="cursor:pointer;">Internships</div>
+        <div style="cursor:pointer;">Life at Pinnacle</div>
+        <div style="cursor:pointer;">Employee Benefits</div>
+        
+
+    </div>
+
+</div>
+
+<!-- CLIENTS FOOTER SECTION -->
+<div style="margin-top: 40px;">
+
+    <div style="
+        font-weight: bold;
+        color: white;
+        font-size: 16px;
+        margin-bottom: 14px;
+    ">
+        Clients
+    </div>
+
+    <div style="
+        color: rgba(255,255,255,0.65);
+        font-size: 14px;
+        line-height: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    ">
+
+        <div style="cursor:pointer;">Government Projects</div>
+        <div style="cursor:pointer;">Private Developers</div>
+        <div style="cursor:pointer;">Real Estate Firms</div>
+        <div style="cursor:pointer;">Infrastructure Clients</div>
+        <div style="cursor:pointer;">Global Partners</div>
+
+    </div>
+
+</div>
+
+
+<!-- GREEN DIVIDER LINE (MOVED UP) -->
+<div style="
+    width: 100%;
+    height: 1px;
+    background: #2ecc71;
+    opacity: 0.7;
+    margin-top: 0px;   /* reduced from 50px */
+"></div>
+
+
+<!-- COPYRIGHT TEXT -->
+<div style="
+    margin-top: 15px;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+">
+
+    <!-- LEFT SIDE -->
+    <div>
+        © 2026 pinnacleinfotech.com. All rights reserved.
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div style="display: flex; gap: 8px; align-items: center;">
+        <span>Digital Partner</span>
+        <span style="color: white; font-weight: bold;">
+            Indus Net Technologies
+        </span>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
