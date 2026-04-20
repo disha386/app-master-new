@@ -2895,7 +2895,7 @@ components.html("""
 
     <!-- TABS -->
     <div class="d-flex justify-content-center gap-3 flex-wrap text-center">
-        <button class="tab-btn" onclick="showTab('products', this)">Our Products</button>
+        <button class="tab-btn active-tab" onclick="showTab('products', this)">Our Products</button>
         <button class="tab-btn" onclick="showTab('solutions', this)">Our Specialized Solutions</button>
         <button class="tab-btn" onclick="showTab('software', this)">Software We Use</button>
     </div>
@@ -3002,7 +3002,20 @@ function showTab(tabId, btn) {
     document.getElementById(tabId).classList.remove("d-none");
     document.getElementById(tabId + "-img").classList.remove("d-none");
 }
+
+/*  AUTO-LOAD DEFAULT TAB */
+window.onload = function () {
+    const defaultBtn = document.querySelector('.tab-btn');
+    showTab('products', defaultBtn);
+};
 </script>
+
+
+
+
+
+
+
 """, height=530)
 
 
@@ -3302,7 +3315,7 @@ nvarandani@pinnacleinfotech.com
             <div class="col-md-6 d-flex align-items-center justify-content-center"
                  style="overflow: visible;">
 
-                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776421786/download_vnigvb.png" style="
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776670560/download_1_o23tg1.png" style="
                     width: 100%;
                     max-width: 500px;
                     height: auto;
@@ -3463,6 +3476,60 @@ components.html("""
                     <div style="padding:12px 0; color:#3f5f8a;">Tutorials</div>
                 </div>
 
+<!-- KNOW MORE BUTTON (CIRCLE INSIDE) -->
+<div style="
+    margin-top: 20px;
+">
+
+    <div style="
+        display: inline-flex;
+        align-items: center;
+        background-color: #0b2a5b;
+        color: white;
+        padding: 8px 10px 8px 18px;
+        border-radius: 999px;
+        font-family: sans-serif;
+        cursor: pointer;
+        gap: 12px;
+        width: fit-content;
+    ">
+
+        <!-- TEXT -->
+        <span style="
+            font-size: 14px;
+            font-weight: 500;
+        ">
+            Know More
+        </span>
+
+        <!-- CIRCLE INSIDE -->
+        <div style="
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        ">
+
+            <span style="
+                color: #0b2a5b;
+                font-size: 16px;
+                font-weight: bold;
+            ">
+                →
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
             </div>
 
 
@@ -3507,9 +3574,6 @@ components.html("""
 
 </div>
                 
-
-
-
             </div>
 
         </div>
@@ -3517,4 +3581,328 @@ components.html("""
     </div>
 
 </div>
-""", height=720)
+""", height=640)
+
+
+#### BlUE CONTENT BOX ### 
+
+components.html("""
+<div style="
+    width: 100%;
+    margin-top: 50px;
+">
+
+    <!-- BLUE BAR -->
+    <div style="
+        width: 100%;
+        background: #0b2a5b;
+        border-radius: 30px;
+        min-height: 980px;
+        padding: 60px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    ">
+
+        <!-- TOP ROW -->
+        <div style="
+            display: flex;
+            align-items: flex-start;
+        ">
+
+            <!-- LEFT BLOCK (LOGO + PARAGRAPH WIDTH CONTROL) -->
+            <div style="
+                width: 420px;   /* SAME as paragraph width */
+            ">
+
+                <!-- LOGO -->
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776670638/logo-white_oz7xl7.svg"
+                    style="margin-bottom: 20px;">
+
+                <!-- PARAGRAPH -->
+                <p style="
+                    color: rgba(255,255,255,0.7);
+                    font-size: 15px;
+                    line-height: 1.6;
+                ">
+                    This is a placeholder paragraph. You can describe your product,
+                    services, or highlights here in a subtle and clean way.
+                </p>
+
+<!-- SECOND LOGO -->
+<img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776681616/iso-19650_1_oe5tbv.webp"
+    style="
+        margin-top: 20px;
+        width: 140px;
+        height: auto;
+        object-fit: contain;
+    ">
+
+
+
+
+
+
+
+
+            </div>
+
+          <!-- ADD THIS ON TOP (only once in your page) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+
+<!-- RIGHT SIDE -->
+<div style="
+    display: flex;
+    gap: 40px;
+flex-wrap: nowrap;   /*  prevents going below */
+align-items: flex-start;
+
+
+    margin-left: 60px;
+    color: white;
+    font-size: 16px;
+">
+
+    <!-- CONTACT COLUMN -->
+<div>
+    <div style="font-weight: bold; margin-bottom: 15px;">
+        Contact
+    </div>
+
+    <!-- PHONE -->
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255,255,255,0.75);
+        margin-bottom: 14px;
+    ">
+        <i class="bi bi-telephone-fill" style="color:#7fa6d9;"></i>
+        <span>+91 98765 43210</span>
+    </div>
+
+    <!-- EMAIL -->
+    <div style="
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255,255,255,0.75);
+        margin-bottom: 18px;
+    ">
+        <i class="bi bi-envelope-fill" style="color:#7fa6d9;"></i>
+        <span>example@email.com</span>
+    </div>
+
+    <!-- SOCIAL CONNECT -->
+    <div style="
+        font-weight: bold;
+        color: white;
+        margin-bottom: 12px;
+    ">
+        Social Connect
+    </div>
+
+    <!-- ICONS (row but below heading) -->
+    <div style="
+        display: flex;
+        gap: 14px;
+    ">
+        <i class="bi bi-facebook" style="color:#7fa6d9; font-size:18px;"></i>
+        <i class="bi bi-twitter-x" style="color:#7fa6d9; font-size:18px;"></i>
+        <i class="bi bi-linkedin" style="color:#7fa6d9; font-size:18px;"></i>
+        <i class="bi bi-youtube" style="color:#7fa6d9; font-size:18px;"></i>
+    </div>
+</div>
+
+<!-- JOIN NEWSLETTER COLUMN -->
+<div>
+    <div style="
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+    ">
+        Join Our Newsletter
+    </div>
+
+    <!-- PARAGRAPH -->
+    <p style="
+        color: rgba(255,255,255,0.7);
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 260px;
+        margin-bottom: 15px;
+    ">
+        Get the latest updates about trending BIM news and informative articles on your inbox by subscribing.
+    </p>
+
+    <div style="
+    position: relative;
+    width: 260px;
+    margin-top: 5px;
+">
+
+    <!-- INPUT -->
+    <input type="text" placeholder="Enter your email"
+        style="
+            width: 100%;
+            height: 50px;
+            border-radius: 10px;
+            border: none;
+            padding: 0 50px 0 12px;  /* space for button */
+            outline: none;
+            box-sizing: border-box;
+        ">
+
+    <!-- YELLOW BUTTON -->
+    <div style="
+        position: absolute;
+        right: 4px;
+        top: 4px;
+        bottom: 4px;          /* stretches vertically */
+        width: 36px;
+        background: #f4b400;
+        border-radius: 10px;  /* ALL corners rounded */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    ">
+
+
+        <!-- BLUE ARROW -->
+        <span style="
+            color: #0b2a5b;
+            font-size: 16px;
+            font-weight: bold;
+        ">
+            →
+        </span>
+
+    </div>
+
+</div>
+</div> 
+
+
+<!-- POPULAR POST -->
+<div style="
+    min-width: 200px;
+">
+
+    <!-- HEADING -->
+    <div style="
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+    ">
+        Popular Post
+    </div>
+
+    <!-- POSTS LIST -->
+    <div style="
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    ">
+
+        <!-- ITEM 1 -->
+        <div style="display:flex; gap:10px; align-items:center;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776681020/Lidar-Vs-Laser_What-is-the-difference_lbxrzt.webp"
+                style="width:60px; height:60px; border-radius:8px; object-fit:cover;">
+            <div style="color: rgba(255,255,255,0.8); font-size:13px;">
+                BIM Clash Detection Guide
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div style="display:flex; gap:10px; align-items:center;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776680987/IoT-in-Construction_1_jgbehm.webp"
+                style="width:60px; height:60px; border-radius:8px; object-fit:cover;">
+            <div style="color: rgba(255,255,255,0.8); font-size:13px;">
+                Construction Asset Management
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div style="display:flex; gap:10px; align-items:center;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776680769/Whats-the-Difference-Between-VRV-and-VRF_zmjs2x.webp"
+                style="width:60px; height:60px; border-radius:8px; object-fit:cover;">
+            <div style="color: rgba(255,255,255,0.8); font-size:13px;">
+                GIS & BIM Integration Benefits
+            </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div style="display:flex; gap:10px; align-items:center;">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776680825/Bar-Bending-Schedule-in-Construction_uhfsek.webp"
+                style="width:60px; height:60px; border-radius:8px; object-fit:cover;">
+            <div style="color: rgba(255,255,255,0.8); font-size:13px;">
+                Smart Infrastructure Trends
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+    </div>
+
+</div>
+
+<!-- FULL WIDTH GREEN DIVIDER -->
+<div style="
+    width: 100%;
+    height: 1px;
+    background: #2ecc71;
+    opacity: 0.7;
+    margin-top: 40px;
+"></div>
+
+
+<!-- BOTTOM NAV ROW -->
+<div style="
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    flex-wrap: wrap;
+    gap: 20px;
+">
+
+    <div style="cursor:pointer;">About</div>
+    <div style="cursor:pointer;">Consulting Services</div>
+    <div style="cursor:pointer;">Verticals</div>
+    <div style="cursor:pointer;">Resources</div>
+    <div style="cursor:pointer;">Markets</div>
+    <div style="cursor:pointer;">BIM Services</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""", height=1200)
