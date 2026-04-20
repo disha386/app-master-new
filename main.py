@@ -1108,137 +1108,6 @@ components.html(f"""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ================= ENGINEERING DESIGN SECTION =================
 
 # ================= ENGINEERING DESIGN SECTION =================
@@ -2854,7 +2723,10 @@ components.html("""
 }
 
 .tab-btn:hover { background-color: #2f5a9a; }
-.active-tab { background-color: #2f5a9a !important; }
+.active-tab {
+    background-color: #0b2a5b !important;
+    box-shadow: 0 6px 18px rgba(11, 42, 91, 0.35);
+}
 
 .no-padding {
     padding-left: 0 !important;
