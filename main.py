@@ -510,7 +510,7 @@ components.html(f"""
     </video>
 
 </div>
-""", height=520)
+""", height=530)
 
 
 
@@ -3422,14 +3422,14 @@ components.html("""
 components.html("""
 <div style="
     display: flex;
-    justify-content: center;   /* centers whole section */
+    justify-content: center;
     width: 100%;
 ">
 
     <!-- MAIN CENTERED CONTAINER -->
     <div style="
         width: 100%;
-        max-width: 1100px;   /* controls overall layout width */
+        max-width: 1100px;
     ">
 
         <div style="
@@ -3469,22 +3469,46 @@ components.html("""
             <!-- RIGHT SIDE IMAGES -->
             <div style="
                 display: flex;
+                flex-direction: column;
                 gap: 14px;
-                align-items: flex-start;
                 margin-top: 5px;
             ">
 
-                <!-- LEFT TALL -->
-                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429100/BIM-Clash-Detection-A-Detailed-Guide_crxhje.webp"
-                    style="width:260px; height:320px; border-radius:14px; object-fit:cover;">
+                <!-- FIRST ROW -->
+                <div style="display:flex; gap:14px;">
 
-                <!-- MIDDLE BOX -->
-                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429076/Construction-Asset-Management-A-Complete-Guide_aeeewh.webp"
-                    style="width:260px; height:180px; border-radius:14px; object-fit:cover; ">
+                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429100/BIM-Clash-Detection-A-Detailed-Guide_crxhje.webp"
+                        style="width:280px; height:320px; border-radius:14px; object-fit:cover;">
 
-                <!-- RIGHT TALL -->
-                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429203/GIS-BIM-Integration-Application-and-Benefits_bmifck.webp"
-                    style="width:260px; height:320px; border-radius:14px; object-fit:cover;">
+                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429076/Construction-Asset-Management-A-Complete-Guide_aeeewh.webp"
+                        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
+
+                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429203/GIS-BIM-Integration-Application-and-Benefits_bmifck.webp"
+                        style="width:280px; height:320px; border-radius:14px; object-fit:cover;">
+
+                </div>
+
+                <!-- SECOND ROW (NEW) -->
+               <!-- SECOND ROW (UPDATED: BOX → VERTICAL → BOX) -->
+
+<div style="display:flex; gap:14px; align-items:flex-start;">
+
+    <!-- LEFT BOX -->
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429342/Landscape-Architecture_Definitions-Significance_1_wfviab.webp"
+        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
+
+    <!-- MIDDLE VERTICAL -->
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429391/IoT-in-Construction_n6pjew.webp"
+        style="width:280px; height:320px; border-radius:14px; object-fit:cover; margin-top:-130px;">
+
+    <!-- RIGHT BOX -->
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429460/Revit-Vs-AutoCAD-History-Basic-Differences-Plugins_cgfhsp.webp"
+        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
+
+</div>
+                
+
+
 
             </div>
 
@@ -3493,4 +3517,4 @@ components.html("""
     </div>
 
 </div>
-""", height=520)
+""", height=720)
