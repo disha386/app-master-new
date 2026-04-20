@@ -3419,53 +3419,78 @@ components.html("""
 
 ### events ### 
 
-
 components.html("""
-<div style="padding: 10px 40px; font-family: sans-serif;">
+<div style="
+    display: flex;
+    justify-content: center;   /* centers whole section */
+    width: 100%;
+">
 
-    <!-- TITLE -->
-    <h3 style="
-        color: #0b2a5b;
-        margin-bottom: 15px;
-        text-align: left;
+    <!-- MAIN CENTERED CONTAINER -->
+    <div style="
+        width: 100%;
+        max-width: 1100px;   /* controls overall layout width */
     ">
-        Blogs & Articles
-    </h3>
 
-    <!-- SECTION LIST -->
-    <div style="display: flex; flex-direction: column; gap: 0px;">
+        <div style="
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 20px;
+            font-family: sans-serif;
+            gap: 30px;
+        ">
 
-        <div style="padding: 12px 0; color: #3f5f8a;">
-            Live Events
-        </div>
-        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+            <!-- LEFT SIDE -->
+            <div style="width: 40%;">
 
-        <div style="padding: 12px 0; color: #3f5f8a;">
-            Industry Insights
-        </div>
-        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+                <h3 style="color:#0b2a5b; margin-bottom:15px;">
+                    Blogs & Articles
+                </h3>
 
-        <div style="padding: 12px 0; color: #3f5f8a;">
-            Product Updates
-        </div>
-        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+                <div>
+                    <div style="padding:12px 0; color:#3f5f8a;">Live Events</div>
+                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding: 12px 0; color: #3f5f8a;">
-            Case Studies
-        </div>
-        <div style="width: 140px; border-top: 1px solid #d0d9e6;"></div>
+                    <div style="padding:12px 0; color:#3f5f8a;">Industry Insights</div>
+                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding: 12px 0; color: #3f5f8a;">
-            Tutorials
+                    <div style="padding:12px 0; color:#3f5f8a;">Product Updates</div>
+                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+                    <div style="padding:12px 0; color:#3f5f8a;">Case Studies</div>
+                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+                    <div style="padding:12px 0; color:#3f5f8a;">Tutorials</div>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE IMAGES -->
+            <div style="
+                display: flex;
+                gap: 14px;
+                align-items: flex-start;
+                margin-top: 5px;
+            ">
+
+                <!-- LEFT TALL -->
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429100/BIM-Clash-Detection-A-Detailed-Guide_crxhje.webp"
+                    style="width:260px; height:320px; border-radius:14px; object-fit:cover;">
+
+                <!-- MIDDLE BOX -->
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429076/Construction-Asset-Management-A-Complete-Guide_aeeewh.webp"
+                    style="width:260px; height:180px; border-radius:14px; object-fit:cover; ">
+
+                <!-- RIGHT TALL -->
+                <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429203/GIS-BIM-Integration-Application-and-Benefits_bmifck.webp"
+                    style="width:260px; height:320px; border-radius:14px; object-fit:cover;">
+
+            </div>
+
         </div>
 
     </div>
 
 </div>
-""", height=320)
-
-
-
-### BESIDE IMAGE ##
-
-
+""", height=520)
