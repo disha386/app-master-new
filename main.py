@@ -3325,56 +3325,88 @@ components.html("""
             gap: 30px;
         ">
 
-            <!-- LEFT SIDE -->
-            <div style="width: 40%;">
-
-                <h3 style="color:#0b2a5b; margin-bottom:15px;">
-                    Blogs & Articles
-                </h3>
-
-                <div>
-                    <div style="padding:12px 0; color:#3f5f8a;">Live Events</div>
-                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
-
-                    <div style="padding:12px 0; color:#3f5f8a;">Industry Insights</div>
-                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
-
-                    <div style="padding:12px 0; color:#3f5f8a;">Product Updates</div>
-                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
-
-                    <div style="padding:12px 0; color:#3f5f8a;">Case Studies</div>
-                    <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
-
-                    <div style="padding:12px 0; color:#3f5f8a;">Tutorials</div>
-                </div>
-
-<!-- KNOW MORE BUTTON (CIRCLE INSIDE) -->
+<!-- LEFT SIDE (NAVBAR + BUTTON TOGETHER) -->
 <div style="
-    margin-top: 20px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
 ">
 
-    <div style="
-        display: inline-flex;
-        align-items: center;
-        background-color: #0b2a5b;
-        color: white;
-        padding: 8px 10px 8px 18px;
-        border-radius: 999px;
-        font-family: sans-serif;
-        cursor: pointer;
-        gap: 12px;
-        width: fit-content;
-    ">
+    <h3 style="color:#0b2a5b; margin-bottom:15px;">
+        Blogs & Articles
+    </h3>
+
+    <div>
+
+        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
+            onmouseover="this.style.color='#0b2a5b'" 
+            onmouseout="this.style.color='#3f5f8a'">
+            Live Events
+        </div>
+        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
+            onmouseover="this.style.color='#0b2a5b'" 
+            onmouseout="this.style.color='#3f5f8a'">
+            Industry Insights
+        </div>
+        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
+            onmouseover="this.style.color='#0b2a5b'" 
+            onmouseout="this.style.color='#3f5f8a'">
+            Product Updates
+        </div>
+        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
+            onmouseover="this.style.color='#0b2a5b'" 
+            onmouseout="this.style.color='#3f5f8a'">
+            Case Studies
+        </div>
+        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+
+        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
+            onmouseover="this.style.color='#0b2a5b'" 
+            onmouseout="this.style.color='#3f5f8a'">
+            Tutorials
+        </div>
+
+    </div>
+
+    <!-- BUTTON NOW INSIDE LEFT COLUMN -->
+    <div style="margin-top: 25px;">
+
+    <div onclick="return false;"
+        style="
+            display: inline-flex;
+            align-items: center;
+            background-color: #0b2a5b;
+            color: white;
+            padding: 8px 10px 8px 18px;
+            border-radius: 999px;
+            cursor: pointer;
+            gap: 12px;
+            transition: all 0.3s ease;
+        "
+
+        onmouseover="
+            this.style.background='#09306d';
+            this.style.transform='translateY(-2px)';
+        "
+
+        onmouseout="
+            this.style.background='#0b2a5b';
+            this.style.transform='translateY(0px)';
+        "
+    >
 
         <!-- TEXT -->
-        <span style="
-            font-size: 14px;
-            font-weight: 500;
-        ">
+        <span style="font-size: 14px; font-weight: 500;">
             Know More
         </span>
 
-        <!-- CIRCLE INSIDE -->
+        <!-- CIRCLE -->
         <div style="
             width: 32px;
             height: 32px;
@@ -3383,12 +3415,14 @@ components.html("""
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 0.3s;
         ">
 
             <span style="
-                color: #0b2a5b;
-                font-size: 16px;
-                font-weight: bold;
+                color:#0b2a5b;
+                font-size:16px;
+                font-weight:bold;
+                transition: 0.3s;
             ">
                 →
             </span>
@@ -3399,12 +3433,7 @@ components.html("""
 
 </div>
 
-
-
-
-            </div>
-
-
+</div>
             <!-- RIGHT SIDE IMAGES -->
             <div style="
                 display: flex;
@@ -3510,12 +3539,6 @@ components.html("""
     ">
 
 
-
-
-
-
-
-
             </div>
 
           <!-- ADD THIS ON TOP (only once in your page) -->
@@ -3537,37 +3560,52 @@ align-items: flex-start;
 
     <!-- CONTACT COLUMN -->
 <div>
-    <div style="font-weight: bold; margin-bottom: 15px;">
+    <div style="font-weight: 510;  font-size: 15px; margin-bottom: 15px;">
         Contact
     </div>
 
     <!-- PHONE -->
-    <div style="
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: rgba(255,255,255,0.75);
-        margin-bottom: 14px;
-    ">
-        <i class="bi bi-telephone-fill" style="color:#7fa6d9;"></i>
-        <span>+91 98765 43210</span>
-    </div>
+   <div style="
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 14px;
+">
+    <i class="bi bi-telephone-fill" style="color:#7fa6d9;"></i>
+    <span style="font-size: 13px;">
+        +91 98765 43210
+    </span>
+</div>
+
+
 
     <!-- EMAIL -->
-    <div style="
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        color: rgba(255,255,255,0.75);
-        margin-bottom: 18px;
-    ">
-        <i class="bi bi-envelope-fill" style="color:#7fa6d9;"></i>
-        <span>example@email.com</span>
-    </div>
+<div style="
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 18px;
+">
+    <i class="bi bi-envelope-fill" style="color:#7fa6d9; font-size:13px;"></i>
+    <span style="font-size: 13px;">
+        example@email.com
+    </span>
+</div>
+
+
+
+
+
+
+
+
+
 
     <!-- SOCIAL CONNECT -->
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         margin-bottom: 12px;
     ">
@@ -3589,9 +3627,10 @@ align-items: flex-start;
 <!-- JOIN NEWSLETTER COLUMN -->
 <div>
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         margin-bottom: 15px;
+         font-size: 15px;
     ">
         Join Our Newsletter
     </div>
@@ -3655,7 +3694,6 @@ align-items: flex-start;
 </div>
 </div> 
 
-
 <!-- POPULAR POST -->
 <div style="
     min-width: 200px;
@@ -3663,9 +3701,10 @@ align-items: flex-start;
 
     <!-- HEADING -->
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         margin-bottom: 15px;
+        font-size: 15px;
     ">
         Popular Post
     </div>
@@ -3718,10 +3757,6 @@ align-items: flex-start;
 </div>
 
 
-
-
-
-
     </div>
 
 </div>
@@ -3752,13 +3787,14 @@ align-items: flex-start;
     <!-- ABOUT COLUMN -->
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         About
     </div>
 
     <div style="
         color: rgba(255,255,255,0.65);
         font-size: 14px;
+        font-weight: 400; 
         line-height: 1.8;
         display: flex;
         flex-direction: column;
@@ -3775,12 +3811,13 @@ align-items: flex-start;
 
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         Consulting Services
     </div>
 
     <div style="
         color: rgba(255,255,255,0.65);
+        font-weight: 400; 
         font-size: 14px;
         line-height: 1.8;
         display: flex;
@@ -3799,12 +3836,13 @@ align-items: flex-start;
 
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         Verticals
     </div>
 
     <div style="
         color: rgba(255,255,255,0.65);
+        font-weight: 400; 
         font-size: 14px;
         line-height: 1.8;
         display: flex;
@@ -3823,12 +3861,13 @@ align-items: flex-start;
 
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         Resources
     </div>
 
     <div style="
         color: rgba(255,255,255,0.65);
+        font-weight: 400; 
         font-size: 14px;
         line-height: 1.8;
         display: flex;
@@ -3847,13 +3886,14 @@ align-items: flex-start;
 
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         Markets
     </div>
 
     <div style="
         color: rgba(255,255,255,0.65);
         font-size: 14px;
+        font-weight: 400; 
         line-height: 1.8;
         display: flex;
         flex-direction: column;
@@ -3871,7 +3911,7 @@ align-items: flex-start;
 
 <div style="min-width: 180px;">
 
-    <div style="font-weight: bold; color: white; margin-bottom: 12px;">
+    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
         BIM Services
     </div>
 
@@ -3879,6 +3919,7 @@ align-items: flex-start;
         color: rgba(255,255,255,0.65);
         font-size: 14px;
         line-height: 1.8;
+        font-weight: 400; 
         display: flex;
         flex-direction: column;
         gap: 6px;
@@ -3896,7 +3937,7 @@ align-items: flex-start;
 
     <!-- MAIN HEADING -->
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         font-size: 16px;
         margin-bottom: 14px;
@@ -3908,6 +3949,7 @@ align-items: flex-start;
     <div style="
         color: rgba(255,255,255,0.65);
         font-size: 14px;
+        font-weight: 400; 
         line-height: 2;
         display: flex;
         flex-direction: column;
@@ -3927,7 +3969,7 @@ align-items: flex-start;
 <div style="margin-top: 40px;">
 
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         font-size: 16px;
         margin-bottom: 14px;
@@ -3938,6 +3980,7 @@ align-items: flex-start;
     <div style="
         color: rgba(255,255,255,0.65);
         font-size: 14px;
+        font-weight: 400; 
         line-height: 2;
         display: flex;
         flex-direction: column;
@@ -3957,7 +4000,7 @@ align-items: flex-start;
 <div style="margin-top: 40px;">
 
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         font-size: 16px;
         margin-bottom: 14px;
@@ -3967,6 +4010,7 @@ align-items: flex-start;
 
     <div style="
         color: rgba(255,255,255,0.65);
+        font-weight: 400; 
         font-size: 14px;
         line-height: 2;
         display: flex;
@@ -3988,7 +4032,7 @@ align-items: flex-start;
 <div style="margin-top: 40px;">
 
     <div style="
-        font-weight: bold;
+        font-weight: 510;
         color: white;
         font-size: 16px;
         margin-bottom: 14px;
@@ -3999,6 +4043,7 @@ align-items: flex-start;
     <div style="
         color: rgba(255,255,255,0.65);
         font-size: 14px;
+        font-weight: 400; 
         line-height: 2;
         display: flex;
         flex-direction: column;
@@ -4025,8 +4070,7 @@ align-items: flex-start;
     margin-top: 0px;   /* reduced from 50px */
 "></div>
 
-
-<!-- COPYRIGHT TEXT -->
+<!-- COPYRIGHT WRAPPER -->
 <div style="
     margin-top: 15px;
     color: rgba(255,255,255,0.65);
@@ -4035,6 +4079,7 @@ align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
+    align-items: flex-start;
 ">
 
     <!-- LEFT SIDE -->
@@ -4042,13 +4087,37 @@ align-items: flex-start;
         © 2026 pinnacleinfotech.com. All rights reserved.
     </div>
 
-    <!-- RIGHT SIDE -->
-    <div style="display: flex; gap: 8px; align-items: center;">
+    <!-- RIGHT SIDE (DIGITAL PARTNER) -->
+    <div style="
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    ">
         <span>Digital Partner</span>
         <span style="color: white; font-weight: bold;">
             Indus Net Technologies
         </span>
     </div>
+
+</div>
+
+
+
+<!-- RIGHT SIDE LINKS (SEPARATE ROW) -->
+<div style="
+    margin-top: 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+    color: rgba(255,255,255,0.65);
+    font-size: 13px;
+    flex-wrap: wrap;
+">
+
+    <div style="cursor:pointer; font-weight: 400 !important;">Privacy Policy</div>
+    <div style="cursor:pointer; font-weight: 400 !important;">Terms & Conditions</div>
+    <div style="cursor:pointer; font-weight: 400 !important;">Cookies Policy</div>
+    <div style="cursor:pointer; font-weight: 400 !important;">Sitemap</div>
 
 </div>
 
@@ -4071,8 +4140,9 @@ align-items: flex-start;
 
 
 
+    </div>
 
-
+</div>
 
 
 """, height=1200)
