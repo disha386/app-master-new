@@ -1017,7 +1017,7 @@ components.html(f"""
         reduce risks, and enhance overall project efficiency.
         </p>
 
-        <a href="#" class="custom-btn">
+        <a href="javascript:void(0)" class="custom-btn">
             Know More
             <span style="
                 display:flex;
@@ -1187,7 +1187,7 @@ components.html(f"""
     ensuring efficiency and sustainability across all projects.
     </p>
 
-    <a href="#" class="custom-btn">
+    <a href="javascript:void(0)" class="custom-btn">
         Know More
         <span style="
             display:flex;
@@ -1358,7 +1358,7 @@ components.html(f"""
         and execution through advanced technologies and smart workflows.
         </p>
 
-        <a href="#" class="custom-btn">
+        <a href="javascript:void(0)" class="custom-btn">
             Know More
             <span style="
                 display:flex;
@@ -1455,28 +1455,49 @@ digital_twin_image_url =" https://res.cloudinary.com/dnodncslz/image/upload/v177
 components.html(f"""
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
+
 <style>
 .custom-btn {{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    background:#002366;
-    color:white;
-    padding:12px 22px;
-    border-radius:50px;
-    text-decoration:none;
-    margin-top:25px;
-    font-size:16px;
-    font-weight:600;
-    transition:0.3s;
-    width:fit-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #002366;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }}
 
 .custom-btn:hover {{
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+    background: #001a4d;
 }}
 </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div style='
     display:flex;
@@ -1524,21 +1545,43 @@ components.html(f"""
         decision-making throughout the project lifecycle.
         </p>
 
-        <a href="#" class="custom-btn">
-            Know More
-            <span style="
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                width:30px;
-                height:30px;
-                background:white;
-                border-radius:50%;
-                color:#002366;
-                font-size:16px;
-                font-weight:bold;
-            ">→</span>
-        </a>
+        <a href="javascript:void(0)" class="custom-btn">
+    Know More
+    <span style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background: white;
+        border-radius: 50%;
+        color: #002366;
+        font-size: 16px;
+        font-weight: bold;
+    ">
+        →
+    </span>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 
@@ -2431,10 +2474,12 @@ components.html("""
 
 /* TEXT BOX */
 .text-box {
-    max-width:750px;   /*  bigger text area */
+    max-width:750px;
     min-height:240px;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    padding-left: 15px;   /*  creates gap from icon */
+    padding-top: 5px;    /*  adds vertical breathing space */
 }
 
 /* TEXT */
@@ -2494,6 +2539,19 @@ components.html("""
     font-size:14px;
 }
 
+.quote-icon {
+    width: 55px;
+    height: 80px;
+    position: absolute;
+    top: -3px;   /*  slightly higher */
+    left: -50px;  /*  slightly left but fully visible */
+    opacity: 1;
+}
+
+
+
+
+
 </style>
 
 
@@ -2507,6 +2565,7 @@ components.html("""
 <div class="wrapper">
 
     <div class="text-box">
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776763634/top-double-invited-comma_yptu3r.svg" class="quote-icon">
         <h3>What people are Saying</h3>
 
         <p id="text"></p>
@@ -3305,184 +3364,170 @@ components.html("""
 ### events ### 
 
 components.html("""
-<div style="
-    display: flex;
-    justify-content: center;
-    width: 100%;
-">
+<div style="display:flex; justify-content:center; width:100%;">
 
-    <!-- MAIN CENTERED CONTAINER -->
-    <div style="
-        width: 100%;
-        max-width: 1100px;
-    ">
+<div style="width:100%; max-width:1100px;">
 
-        <div style="
-            display: flex;
-            align-items: flex-start;
-            padding: 10px 20px;
-            font-family: sans-serif;
-            gap: 30px;
-        ">
+<div style="display:flex; align-items:flex-start; padding:10px 20px; font-family:sans-serif; gap:30px;">
 
-<!-- LEFT SIDE (NAVBAR + BUTTON TOGETHER) -->
-<div style="
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-">
+<!-- LEFT SIDE -->
+<div style="width:40%; display:flex; flex-direction:column;">
 
-    <h3 style="color:#0b2a5b; margin-bottom:15px;">
-        Blogs & Articles
-    </h3>
+<h3 style="color:#0b2a5b; margin-bottom:15px;">
+    Blogs & Articles
+</h3>
 
-    <div>
+<div>
 
-        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
-            onmouseover="this.style.color='#0b2a5b'" 
-            onmouseout="this.style.color='#3f5f8a'">
-            Live Events
-        </div>
-        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+<div onclick="changeImages('live')" style="padding:12px 0; cursor:pointer;"
+onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
+    Live Events
+</div>
+<div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
-            onmouseover="this.style.color='#0b2a5b'" 
-            onmouseout="this.style.color='#3f5f8a'">
-            Industry Insights
-        </div>
-        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+<div onclick="changeImages('insights')" style="padding:12px 0; cursor:pointer;"
+onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
+    Industry Insights
+</div>
+<div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
-            onmouseover="this.style.color='#0b2a5b'" 
-            onmouseout="this.style.color='#3f5f8a'">
-            Product Updates
-        </div>
-        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+<div onclick="changeImages('updates')" style="padding:12px 0; cursor:pointer;"
+onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
+    Product Updates
+</div>
+<div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
-            onmouseover="this.style.color='#0b2a5b'" 
-            onmouseout="this.style.color='#3f5f8a'">
-            Case Studies
-        </div>
-        <div style="width:140px; border-top:1px solid #d0d9e6;"></div>
+<div onclick="changeImages('case')" style="padding:12px 0; cursor:pointer;"
+onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
+    Case Studies
+</div>
+<div style="width:140px; border-top:1px solid #d0d9e6;"></div>
 
-        <div style="padding:12px 0; color:#3f5f8a; cursor:pointer;"
-            onmouseover="this.style.color='#0b2a5b'" 
-            onmouseout="this.style.color='#3f5f8a'">
-            Tutorials
-        </div>
-
-    </div>
-
-    <!-- BUTTON NOW INSIDE LEFT COLUMN -->
-    <div style="margin-top: 25px;">
-
-    <div onclick="return false;"
-        style="
-            display: inline-flex;
-            align-items: center;
-            background-color: #0b2a5b;
-            color: white;
-            padding: 8px 10px 8px 18px;
-            border-radius: 999px;
-            cursor: pointer;
-            gap: 12px;
-            transition: all 0.3s ease;
-        "
-
-        onmouseover="
-            this.style.background='#09306d';
-            this.style.transform='translateY(-2px)';
-        "
-
-        onmouseout="
-            this.style.background='#0b2a5b';
-            this.style.transform='translateY(0px)';
-        "
-    >
-
-        <!-- TEXT -->
-        <span style="font-size: 14px; font-weight: 500;">
-            Know More
-        </span>
-
-        <!-- CIRCLE -->
-        <div style="
-            width: 32px;
-            height: 32px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-        ">
-
-            <span style="
-                color:#0b2a5b;
-                font-size:16px;
-                font-weight:bold;
-                transition: 0.3s;
-            ">
-                →
-            </span>
-
-        </div>
-
-    </div>
+<div onclick="changeImages('tutorials')" style="padding:12px 0; cursor:pointer;"
+onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
+    Tutorials
+</div>
 
 </div>
 
 </div>
-            <!-- RIGHT SIDE IMAGES -->
-            <div style="
-                display: flex;
-                flex-direction: column;
-                gap: 14px;
-                margin-top: 5px;
-            ">
 
-                <!-- FIRST ROW -->
-                <div style="display:flex; gap:14px;">
+<!-- RIGHT SIDE IMAGES -->
+<div id="imageContainer" style="display:flex; flex-direction:column; gap:14px; margin-top:5px;">
 
-                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429100/BIM-Clash-Detection-A-Detailed-Guide_crxhje.webp"
-                        style="width:280px; height:320px; border-radius:14px; object-fit:cover;">
+<div style="display:flex; gap:14px;">
+    <img id="img1" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
+    <img id="img2" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
+    <img id="img3" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
+</div>
 
-                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429076/Construction-Asset-Management-A-Complete-Guide_aeeewh.webp"
-                        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
-
-                    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429203/GIS-BIM-Integration-Application-and-Benefits_bmifck.webp"
-                        style="width:280px; height:320px; border-radius:14px; object-fit:cover;">
-
-                </div>
-
-                <!-- SECOND ROW (NEW) -->
-               <!-- SECOND ROW (UPDATED: BOX → VERTICAL → BOX) -->
-
-<div style="display:flex; gap:14px; align-items:flex-start;">
-
-    <!-- LEFT BOX -->
-    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429342/Landscape-Architecture_Definitions-Significance_1_wfviab.webp"
-        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
-
-    <!-- MIDDLE VERTICAL -->
-    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429391/IoT-in-Construction_n6pjew.webp"
-        style="width:280px; height:320px; border-radius:14px; object-fit:cover; margin-top:-130px;">
-
-    <!-- RIGHT BOX -->
-    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776429460/Revit-Vs-AutoCAD-History-Basic-Differences-Plugins_cgfhsp.webp"
-        style="width:280px; height:180px; border-radius:14px; object-fit:cover;">
+<div style="display:flex; gap:14px;">
+    <img id="img4" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
+    <img id="img5" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
+    <img id="img6" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
+</div>
 
 </div>
-                
-            </div>
-
-        </div>
-
-    </div>
 
 </div>
-""", height=640)
+</div>
+</div>
+
+<script>
+
+// IMAGE SETS
+const imageSets = {
+
+live: [
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429100/BIM-Clash-Detection-A-Detailed-Guide_crxhje.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429076/Construction-Asset-Management-A-Complete-Guide_aeeewh.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429203/GIS-BIM-Integration-Application-and-Benefits_bmifck.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429342/Landscape-Architecture_Definitions-Significance_1_wfviab.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429391/IoT-in-Construction_n6pjew.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776429460/Revit-Vs-AutoCAD-History-Basic-Differences-Plugins_cgfhsp.webp"
+],
+
+insights: [
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769564/business-value-bim-mechanical-hvac-construction_cbn6xa.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769595/business-value-bim-water-projects_eyra7b.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769625/no-img_noixhe.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769664/latest_news_pinnacle_on_autodesk_madurai_campus_vzlyoe.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769703/no-img_xi4gnp.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776769703/no-img_xi4gnp.webp"
+],
+
+updates: [
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770103/pinnacle-bim-series-pop-up.png_vu0ydd.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770265/Pinnacle-Infotech-at-New-York-Build-Expo-2024-2048x1583_xdq3og.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770056/Pinnacle-at-AU-2024_y0ekie.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770095/pinnacle-global-customer-event-cover-image_dbkpwf.png",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770220/Big-5-Saudi_2025-1_lmn8eh.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770146/Japan-Build-Tokyo_uh8x4b.webp"
+],
+
+case: [
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776767493/bimal_patwari_cnbs_tv18_interview_2024_gyiyq1.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776767482/bimal_patwari_journey_continues_2021_big_cjb2kb.webp",
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770095/pinnacle-global-customer-event-cover-image_dbkpwf.png"
+],
+
+tutorials: [
+"https://res.cloudinary.com/dnodncslz/image/upload/v1776770757/stats-img-01_a9ufd4.webp"
+]
+
+};
+
+
+// CHANGE FUNCTION
+function changeImages(type){
+
+    const imgs = imageSets[type];
+
+    for(let i=1;i<=6;i++){
+        const el = document.getElementById("img"+i);
+
+        if(imgs[i-1]){
+            el.src = imgs[i-1];
+            el.style.display = "block";
+        } else {
+            el.style.display = "none";
+        }
+    }
+}
+
+// DEFAULT LOAD
+changeImages('live');
+
+</script>
+""", height=680)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #### BlUE CONTENT BOX ### 
