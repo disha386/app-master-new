@@ -3423,7 +3423,7 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 
 <div style="display:flex; gap:14px;">
     <img id="img4" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
-    <img id="img5" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
+    <img id="img5" style="width:280px;height:320px;border-radius:14px;object-fit:cover;   transform: translateY(-130px);">
     <img id="img6" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
 </div>
 
