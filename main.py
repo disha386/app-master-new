@@ -1,8 +1,10 @@
 import streamlit as st
+
 import sqlite3
 import os
 import streamlit.components.v1 as components
 import base64
+
 # ---------------- STATE (ADD BELOW IMPORTS) ----------------
 
 
@@ -2533,40 +2535,204 @@ animateTextChange(0);
 
 ##### Say Hello ########
 
-st.markdown(
-"""
+
+
+
+components.html("""
 <style>
+
 .cta-box {
     width: 100%;
     background: #0A2A66;
-    padding: 80px 20px;
+    padding: 80px 40px;
     border-radius: 24px;
     text-align: center;
     font-family: sans-serif;
     color: white;
+    position: relative;
+
+    /* IMPORTANT FIX */
+    overflow: visible;
+    box-sizing: border-box;
 }
+
+
+
+
+
 .cta-title {
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 48px;
+    font-weight: 800;
     margin-bottom: 12px;
 }
+
 .cta-subtitle {
     font-size: 16px;
-    font-weight: 400;
     opacity: 0.85;
-    line-height: 1.5;
+}
+
+.cta-btn {
+    position: absolute;
+    background: white;
+    color: #0A2A66;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    white-space: nowrap;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: 0.05s linear;
 }
 </style>
 
-<div class="cta-box">
+<div class="cta-box" id="ctaBox">
     <div class="cta-title">Say Hello</div>
     <div class="cta-subtitle">
         We’d love to hear from you and help you build something amazing
     </div>
+
+    <div class="cta-btn" id="ctaBtn">Reach Out Today</div>
 </div>
-""",
-unsafe_allow_html=True
-)
+
+<script>
+const box = document.getElementById("ctaBox");
+const btn = document.getElementById("ctaBtn");
+
+box.addEventListener("mousemove", (e) => {
+    const rect = box.getBoundingClientRect();
+
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
+
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+});
+</script>
+""", height=400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### more about##
 
