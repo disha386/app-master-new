@@ -2700,6 +2700,41 @@ components.html("""
     font-weight: bold;
 }
 
+.tab-btn {
+    position: relative;  /* IMPORTANT */
+}
+
+/* ▼ Arrow */
+.tab-btn::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #0b2a5b; /* same as active tab */
+
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+/* Show only for active tab */
+.active-tab::after {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
 </style>
 
 <div class="container mt-4">
@@ -2986,7 +3021,7 @@ window.onload = function () {
 
 
 
-""", height=800)
+""", height=680)
 
 
 #### bar#### 
