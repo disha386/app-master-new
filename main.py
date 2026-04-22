@@ -538,6 +538,69 @@ if len(images) >= 5:
 
 
 html = f"""
+
+<style>
+.custom-btn {{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #002366;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    width: fit-content;
+}}
+
+.custom-btn:hover {{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style='
     max-width:1200px;
     margin:60px auto;
@@ -567,42 +630,26 @@ Pinnacle is your gateway to innovative solutions and transformative experiences.
 Our 30+ years of expertise drive excellence in the Design, Preconstruction, Construction Management, Digital Twin, and Facilities Management.
 </p>
 
-
-       
-
-
-<a href="#" style="
-    display:inline-flex;
-    align-items:center;
-    gap:12px;
-    background:#002366;
-    color:white;
-    padding:12px 24px;
-    border-radius:50px;
-    text-decoration:none;
-    margin-top:25px;
-    font-size:16px;
-    font-weight:600;
-">
-
-    Know More
+<a class="custom-btn" onclick="return false;">
+    <span>Know More</span>
 
     <span style="
         display:flex;
         align-items:center;
         justify-content:center;
-        width:30px;
-        height:30px;
+        width:28px;
+        height:28px;
         background:white;
         border-radius:50%;
-        color:#002366;   /*  BLUE arrow */
-        font-size:16px;
+        color:#002366;
+        font-size:14px;
         font-weight:bold;
     ">
         →
     </span>
-
 </a>
+
+
 
 
     </div>
@@ -769,179 +816,6 @@ components.html("""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ================= BIM SERVICES (NEW SECTION) =================
 
 bim_image_url = "https://res.cloudinary.com/dnodncslz/image/upload/v1774604187/bim_services_pinnacle_infotech_2_zrp9oc.webp"  # 🔥 replace with your image
@@ -1017,7 +891,7 @@ components.html(f"""
         reduce risks, and enhance overall project efficiency.
         </p>
 
-        <a href="javascript:void(0)" class="custom-btn">
+        <a class="custom-btn" onclick="return false;">
             Know More
             <span style="
                 display:flex;
@@ -1187,7 +1061,7 @@ components.html(f"""
     ensuring efficiency and sustainability across all projects.
     </p>
 
-    <a href="javascript:void(0)" class="custom-btn">
+    <a class="custom-btn" onclick="return false;">
         Know More
         <span style="
             display:flex;
@@ -1358,7 +1232,7 @@ components.html(f"""
         and execution through advanced technologies and smart workflows.
         </p>
 
-        <a href="javascript:void(0)" class="custom-btn">
+        <a class="custom-btn" onclick="return false;">
             Know More
             <span style="
                 display:flex;
@@ -1482,23 +1356,6 @@ components.html(f"""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div style='
     display:flex;
     justify-content:center;
@@ -1545,38 +1402,25 @@ components.html(f"""
         decision-making throughout the project lifecycle.
         </p>
 
-        <a href="javascript:void(0)" class="custom-btn">
-    Know More
+        
+<a class="custom-btn" onclick="return false;">
+    <span>Know More</span>
+
     <span style="
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
         background: white;
         border-radius: 50%;
         color: #002366;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
     ">
         →
     </span>
 </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1940,22 +1784,6 @@ components.html("""
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 
 <div style="
@@ -1970,9 +1798,6 @@ components.html("""
         margin:0 auto;
         padding:0 40px;
     ">
-
-
-
 
 
 
@@ -2216,7 +2041,7 @@ components.html("""
 
 <div style="text-align:center; margin-top:40px;">
 
-    <a href="#" class="custom-btn">
+  <a class="custom-btn" onclick="return false;">
         Explore All
         <span style="
             display:flex;
@@ -3364,6 +3189,69 @@ components.html("""
 ### events ### 
 
 components.html("""
+
+<style>
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #002366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div style="display:flex; justify-content:center; width:100%;">
 
 <div style="width:100%; max-width:1100px;">
@@ -3407,6 +3295,59 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'">
     Tutorials
 </div>
+
+
+
+
+<!-- KNOW MORE BUTTON -->
+<div style="margin-top:20px;">
+
+<a class="custom-btn" onclick="return false;">
+    <span>Know More</span>
+
+    <span style="
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        width:28px;
+        height:28px;
+        background:white;
+        border-radius:50%;
+        color:#002366;
+        font-size:14px;
+        font-weight:bold;
+    ">
+        →
+    </span>
+</a>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </div>
 
@@ -3704,7 +3645,7 @@ align-items: flex-start;
             height: 50px;
             border-radius: 10px;
             border: none;
-            padding: 0 50px 0 12px;  /* space for button */
+            padding: 0 50px 0 12px;  
             outline: none;
             box-sizing: border-box;
         ">
@@ -3714,10 +3655,10 @@ align-items: flex-start;
         position: absolute;
         right: 4px;
         top: 4px;
-        bottom: 4px;          /* stretches vertically */
+        bottom: 4px;          
         width: 36px;
         background: #f4b400;
-        border-radius: 10px;  /* ALL corners rounded */
+        border-radius: 10px;  
         display: flex;
         align-items: center;
         justify-content: center;
@@ -4165,22 +4106,6 @@ align-items: flex-start;
     <div style="cursor:pointer; font-weight: 400 !important;">Sitemap</div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
