@@ -2620,31 +2620,111 @@ components.html("""
 .grey-card {
     background: #e5e7eb;
     border-radius: 14px;
-    padding: 16px;
+    padding: 14px;
     flex: 1;
-    min-height: 160px;
+    gap: 6px;
+    min-height: 230px;   /* increased height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* IMPORTANT */
     transition: 0.3s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-.grey-card:hover {
-    background: #dbe1e8;
-    transform: translateY(-3px);
+
+.grey-card img {
+    width: 130px;        /* control size */
+    height: 130px;       /* same height */
+    object-fit: contain;
 }
 
-.grey-card .title {
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 6px;
+
+
+
+.logo-box {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
 }
+
+
+
+
+
+
+
+
+
+
 
 .grey-card .desc {
     font-size: 13px;
     color: #555;
+    line-height: 1.5;
+    margin-top: -8px;   /*  move text upward */
+    margin-bottom: 4px;
 }
+
+
+
+
+.card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #0b2a5b;
+    color: white;
+    padding: 5px 12px;   /*  compact */
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    width: fit-content;
+    transition: 0.25s ease;
+    margin-top: 4px;   /*  slightly upward */
+}
+
+.card-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.card-btn .circle {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-btn .circle span {
+    color: #0b2a5b;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>
 
 <div class="container mt-4">
@@ -2669,9 +2749,118 @@ components.html("""
                 </div>
 
                 <div style="display:flex; gap:12px; margin-top:14px;">
-                    <div class="grey-card"><div class="title">Product 1</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Product 2</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Product 3</div><div class="desc">Desc</div></div>
+
+<div class="grey-card">
+
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776839659/vdc-logo_bth6y1.webp">
+
+    <div class="desc">
+        Integrate PiVDC, an innovation of Pinnacle. into your daily workflow to automate repetitive tasks.
+
+
+
+
+
+
+
+
+    </div>
+
+<a class="card-btn" onclick="return false;">
+    <span>Know More</span>
+
+    <span class="circle">
+        <span>→</span>
+    </span>
+</a>
+    
+
+
+
+
+
+
+
+</div>
+
+<div class="grey-card">
+
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776840965/innomaint-logo_3_tia3bq.webp">
+
+    <div class="desc">
+        
+
+A product of Pinnacle, InnoMaint integrates with Digital Twins for top-tier tech driven 
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+<a class="card-btn" onclick="return false;">
+    <span>Know More</span>
+
+    <span class="circle">
+        <span>→</span>
+    </span>
+</a>
+
+
+
+    
+
+
+
+</div>
+
+<div class="grey-card">
+
+    <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776841013/cd-logo_1_xkfxsy.webp">
+
+    <div class="desc">
+        
+
+Need a customized plugin? Share your requirements and kickstart the development process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+   <a class="card-btn" onclick="return false;">
+    <span>Know More</span>
+
+    <span class="circle">
+        <span>→</span>
+    </span>
+</a>
+
+
+
+
+
+
+</div>
+
+
+
                 </div>
             </div>
 
@@ -2772,7 +2961,7 @@ window.onload = function () {
 
 
 
-""", height=530)
+""", height=600)
 
 
 #### bar#### 
@@ -3440,34 +3629,7 @@ function changeImages(type){
 changeImages('live');
 
 </script>
-""", height=680)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+""", height=650)
 
 
 
