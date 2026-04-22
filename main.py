@@ -2653,13 +2653,6 @@ components.html("""
 
 
 
-
-
-
-
-
-
-
 .grey-card .desc {
     font-size: 13px;
     color: #555;
@@ -2707,43 +2700,27 @@ components.html("""
     font-weight: bold;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </style>
 
 <div class="container mt-4">
 
     <!-- TABS -->
-    <div class="d-flex justify-content-center gap-3 flex-wrap text-center">
+    <div style="width:1100px; margin:0 auto;">
+    <div class="d-flex justify-content-between">
         <button class="tab-btn active-tab" onclick="showTab('products', this)">Our Products</button>
         <button class="tab-btn" onclick="showTab('solutions', this)">Our Specialized Solutions</button>
         <button class="tab-btn" onclick="showTab('software', this)">Software We Use</button>
     </div>
+</div>
 
     <!-- CONTENT -->
-    <div class="row mt-4 gx-3 justify-content-center">
+   <div class="row mt-4 gx-2 align-items-stretch" style="width:1100px; margin:0 auto;">
 
         <!-- LEFT SIDE (TEXT + CARDS) -->
         <div class="col-auto no-padding">
 
             <!-- PRODUCTS -->
-            <div id="products" class="tab-section d-none" style="width:620px;">
+            <div id="products" class="tab-section " style="width:620px;">
                 <div class="p-3 bg-light rounded text-left">
                     The workforce at Pinnacle is proficient in software platforms spanning the entire construction lifecycle. They include software for design, 3D modeling/rendering, BIM modeling/fabrication, CAD drafting, and Common Data Environment. Using these software tools, we implement advanced workflows that streamline interdisciplinary coordination, facilitate proactive clash resolution, and help clients achieve the best-in-class outputs.
                 </div>
@@ -2758,12 +2735,6 @@ components.html("""
         Integrate PiVDC, an innovation of Pinnacle. into your daily workflow to automate repetitive tasks.
 
 
-
-
-
-
-
-
     </div>
 
 <a class="card-btn" onclick="return false;">
@@ -2775,12 +2746,6 @@ components.html("""
 </a>
     
 
-
-
-
-
-
-
 </div>
 
 <div class="grey-card">
@@ -2791,16 +2756,6 @@ components.html("""
         
 
 A product of Pinnacle, InnoMaint integrates with Digital Twins for top-tier tech driven 
-
-
-
-
-
-
-
-
-
-
 
 
     </div>
@@ -2833,15 +2788,6 @@ Need a customized plugin? Share your requirements and kickstart the development 
 
 
 
-
-
-
-
-
-
-
-
-
     </div>
 
    <a class="card-btn" onclick="return false;">
@@ -2853,87 +2799,152 @@ Need a customized plugin? Share your requirements and kickstart the development 
 </a>
 
 
-
-
-
-
 </div>
 
 
 
                 </div>
             </div>
+
+
+
+
+
 
             <!-- SOLUTIONS -->
-            <div id="solutions" class="tab-section d-none" style="width:620px;">
-                <div class="p-3 bg-light rounded text-left">
-                    Beyond our core services, Pinnacle is a proud Autodesk Learning and Reselling partner and also delivers exclusive CAD support to HP. Being an Authorized Training Centre (ATC), our sessions comply with Autodesk’s training benchmarks. As a valued partner of HP, Pinnacle’s expertise in accurately converting 2D CAD files or 3D models into 2D DXF files powers HP SitePrint’s core operations.
+<!-- SOLUTIONS -->
+<div id="solutions" class="tab-section d-none" style="width:620px;">
+
+    <div class="p-3 bg-light rounded text-left">
+        Beyond our core services, Pinnacle is a proud Autodesk Learning and Reselling partner and also delivers exclusive CAD support to HP. Being an Authorized Training Centre (ATC), our sessions comply with Autodesk’s training benchmarks. As a valued partner of HP, Pinnacle’s expertise in accurately converting 2D CAD files or 3D models into 2D DXF files powers HP SitePrint’s core operations.
+    </div>
+
+    <div style="display:flex; gap:12px; margin-top:14px;">
+
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776849531/atc-logo_odfqvi.webp">
+            <div class="desc">Get industry-grade training from certified instructors on the latest Autodesk software products.</div>
+
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
+        </div>
+
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776849531/atc-logo_odfqvi.webp">
+            <div class="desc">Pinnacle is an authorized partner of Autodesk, offering genuine software license and top-tier support.</div>
+
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
+        </div>
+
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776849613/hp-site-print-service_ur2rst.webp">
+            <div class="desc">Exclusive CAD support services in partnership with HP for precise and error-free construction site layouts.</div>
+
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
 
 
 
-                </div>
 
-                <div style="display:flex; gap:12px; margin-top:14px;">
-                    <div class="grey-card"><div class="title">Solution 1</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Solution 2</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Solution 3</div><div class="desc">Desc</div></div>
-                </div>
-            </div>
 
             <!-- SOFTWARE -->
-            <div id="software" class="tab-section d-none" style="width:620px;">
-                <div class="p-3 bg-light rounded text-left">
-                    The workforce at Pinnacle is proficient in software platforms spanning the entire construction lifecycle. They include software for design, 3D modeling/rendering, BIM modeling/fabrication, CAD drafting, and Common Data Environment. Using these software tools, we implement advanced workflows that streamline interdisciplinary coordination, facilitate proactive clash resolution, and help clients achieve the best-in-class outputs.
+            
+<!-- SOFTWARE -->
+<div id="software" class="tab-section d-none" style="width:620px;">
 
+    <!-- PARAGRAPH (same style as others) -->
+    <div class="p-3 bg-light rounded text-left">
+        The workforce at Pinnacle is proficient in software platforms spanning the entire construction lifecycle. They include software for design, 3D modeling/rendering, BIM modeling/fabrication, CAD drafting, and Common Data Environment.
+    </div>
 
+    <!-- CARDS -->
+    <div style="display:flex; gap:12px; margin-top:14px;">
 
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776849531/atc-logo_odfqvi.webp">
 
-
-                </div>
-
-                <div style="display:flex; gap:12px; margin-top:14px;">
-                    <div class="grey-card"><div class="title">Software 1</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Software 2</div><div class="desc">Desc</div></div>
-                    <div class="grey-card"><div class="title">Software 3</div><div class="desc">Desc</div></div>
-                </div>
+            <div class="desc">
+                Pinnacle uses top-tier Autodesk solutions to drive excellence and agility in project execution.
             </div>
 
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
         </div>
 
-        <!-- RIGHT IMAGE -->
-        <div class="col-auto no-padding">
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776851269/bentley-logo_zn61i4.webp">
 
-<div id="products-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
-    <div style="height:100%; display:flex;">
+            <div class="desc">
+                
+        Using a range of Bentley offerings for design, 3D modeling, CAD drafting, and more.
+
+
+
+
+            </div>
+
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
+        </div>
+
+        <div class="grey-card">
+            <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776851319/tekla-logo_uv6fde.webp">
+
+            <div class="desc">
+                Leveraging Tekla for well-coordinated, accurate, and fabrication-ready BIM models.
+            </div>
+
+            <a class="card-btn" onclick="return false;">
+                <span>Know More</span>
+                <span class="circle"><span>→</span></span>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<!-- RIGHT SIDE IMAGE -->
+<!-- IMAGE BELOW CONTENT -->
+
+<!-- RIGHT SIDE IMAGE -->
+<div class="col-auto no-padding "style="margin-left:60px ;margin-top:5px;">
+
+    <div id="products-img" class="tab-img " style="width:420px; height:100%;">
         <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776344032/our_products_2_g6lnrn.webp"
-             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+             style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
     </div>
-</div>
 
-<div id="solutions-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
-    <div style="height:100%; display:flex;">
+    <div id="solutions-img" class="tab-img d-none" style="width:420px; height:100%;">
         <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776411327/our_specilized_solutions_hv8egs.webp"
-             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+             style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
     </div>
-</div>
 
-
-<div id="software-img" class="tab-img d-none ms-3 h-100" style="width:420px;">
-    <div style="height:100%; display:flex;">
+    <div id="software-img" class="tab-img d-none" style="width:420px; height:100%;">
         <img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776411367/software_we_use_2_rjrfyh.webp"
-             style="width:100%; height:100%; object-fit:cover; border-radius:10px;">
+             style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
     </div>
+
 </div>
 
-            
 
-
-
-
-        </div>
-
-    </div>
-</div>
 
 <script>
 function showTab(tabId, btn) {
@@ -2948,11 +2959,21 @@ function showTab(tabId, btn) {
     document.getElementById(tabId + "-img").classList.remove("d-none");
 }
 
-/*  AUTO-LOAD DEFAULT TAB */
+
 window.onload = function () {
     const defaultBtn = document.querySelector('.tab-btn');
     showTab('products', defaultBtn);
 };
+
+
+
+
+
+
+
+
+
+
 </script>
 
 
@@ -2961,7 +2982,11 @@ window.onload = function () {
 
 
 
-""", height=600)
+
+
+
+
+""", height=800)
 
 
 #### bar#### 
