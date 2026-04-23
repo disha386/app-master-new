@@ -2683,169 +2683,7 @@ box.addEventListener("mouseleave", () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 """, height=400)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3692,7 +3530,6 @@ components.html("""
 
 ### latest update ###
 
-
 components.html("""
 <div style="text-align: center; margin: 20px 0;">
 
@@ -3742,47 +3579,6 @@ components.html("""
 }
 </style>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div style="display:flex; justify-content:center; width:100%;">
 
 <div style="width:100%; max-width:1100px;">
@@ -3827,9 +3623,6 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
     Tutorials
 </div>
 
-
-
-
 <!-- KNOW MORE BUTTON -->
 <div style="margin-top:20px;">
 
@@ -3854,32 +3647,6 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 
 </div>
@@ -3887,7 +3654,7 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 <!-- RIGHT SIDE IMAGES -->
 <div id="imageContainer" style="display:flex; flex-direction:column; gap:14px; margin-top:5px;">
 
-<div style="display:flex; gap:14px;">
+<div id="row1" style="display:flex; gap:14px; justify-content:flex-start;">
     <img id="img1" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
     <img id="img2" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
     <img id="img3" style="width:280px;height:320px;border-radius:14px;object-fit:cover;">
@@ -3895,7 +3662,7 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 
 <div style="display:flex; gap:14px;">
     <img id="img4" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
-    <img id="img5" style="width:280px;height:320px;border-radius:14px;object-fit:cover;   transform: translateY(-130px);">
+    <img id="img5" style="width:280px;height:320px;border-radius:14px;object-fit:cover; transform: translateY(-130px);">
     <img id="img6" style="width:280px;height:180px;border-radius:14px;object-fit:cover;">
 </div>
 
@@ -3907,7 +3674,6 @@ onmouseover="this.style.color='#0b2a5b'" onmouseout="this.style.color='#3f5f8a'"
 
 <script>
 
-// IMAGE SETS
 const imageSets = {
 
 live: [
@@ -3949,11 +3715,25 @@ tutorials: [
 
 };
 
-
-// CHANGE FUNCTION
 function changeImages(type){
 
     const imgs = imageSets[type];
+    const row1 = document.getElementById("row1");
+
+    row1.style.justifyContent = "flex-start";
+
+    for(let i=1;i<=6;i++){
+        const el = document.getElementById("img"+i);
+        el.style.display = "none";
+        el.src = "";
+    }
+
+    if(type === "tutorials"){
+        const el = document.getElementById("img1");
+        el.src = imgs[0];
+        el.style.display = "block";
+        return;
+    }
 
     for(let i=1;i<=6;i++){
         const el = document.getElementById("img"+i);
@@ -3961,17 +3741,143 @@ function changeImages(type){
         if(imgs[i-1]){
             el.src = imgs[i-1];
             el.style.display = "block";
-        } else {
-            el.style.display = "none";
         }
     }
 }
 
-// DEFAULT LOAD
 changeImages('live');
 
 </script>
+
 """, height=650)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
