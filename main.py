@@ -2287,53 +2287,73 @@ st.markdown('''
 
 ##### PEOPLE  #######
 components.html("""
+
 <style>
 
 .wrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 180px;   /* increased spacing */
-    width: 100%;
-    flex-wrap: nowrap;
-    padding: 40px 0;  /* gives breathing space */
+    justify-content: space-between;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    gap: 120px;
+    padding: 60px 40px;
+
+    box-sizing: border-box;
+    overflow: visible;
+    transform: translateX(60px);
 }
 
 /* TEXT BOX */
 .text-box {
-    max-width:750px;
-    min-height:240px;
+    max-width: 900px;
+    flex: 1;
     position: relative;
-    overflow: visible;
-    padding-left: 15px;   /*  creates gap from icon */
-    padding-top: 5px;    /*  adds vertical breathing space */
+    transform: translateY(-110px);
 }
+
+/* HEADING */
+.text-box h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+
+    color: #0A2A66;                  /* deep blue */
+    font-family: 'Inter', 'Segoe UI', sans-serif;   
+    transform: translateY(-60px);    
+}
+
+
+
+
 
 /* TEXT */
 #text {
-    display:block;
-    transform: translateX(0px);
-    opacity: 1;
-    transition: transform 0.45s ease, opacity 0.45s ease;
-    will-change: transform, opacity;
-    font-size: 18px;   /*  bigger text */
-    line-height: 1.6;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    line-height: 1.9;
+    margin-top: -40px;
+    display: inline-block;
+    transform: skewY(-2deg);
 }
 
 /* DECK */
 .deck {
-    width:340px;    /*  increased */
-    height:400px;   /*  increased */
-    position:relative;
+    width: 420px;
+    height: 520px;
     flex-shrink: 0;
-    overflow: hidden;
+    position: relative;
+    margin-top: -40px; 
 }
 
-/* STACKED CARDS */
+/* CARDS */
 .card {
-    position:absolute;
-    width:260px;   /* increased */
-    height:340px;  /*  increased */
+    position: absolute;
+    width: 320px;
+    height: 460px;
 }
 
 .card1 { transform: translate(0px,0px) rotate(-2deg); z-index:5; }
@@ -2342,42 +2362,38 @@ components.html("""
 .card4 { transform: translate(24px,9px) rotate(-1deg); z-index:2; }
 .card5 { transform: translate(32px,12px) rotate(2deg); z-index:1; }
 
-.card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    border-radius:14px;
-    box-shadow:0 12px 30px rgba(0,0,0,0.30);
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.30);
 }
 
 /* BUTTONS */
 .controls {
-    margin-top:18px;
+    margin-top: 18px;
 }
 
 .btn {
-    border:none;
-    background:#0A2A66;
-    color:white;
-    padding:8px 14px;
-    margin-right:10px;
-    border-radius:8px;
-    cursor:pointer;
-    font-size:14px;
+    border: none;
+    background: #0A2A66;
+    color: white;
+    padding: 8px 14px;
+    margin-right: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
+/* QUOTE ICON */
 .quote-icon {
-    width: 55px;
-    height: 80px;
+    width: 90px;
+    height: 120px;
     position: absolute;
-    top: -3px;   /*  slightly higher */
-    left: -50px;  /*  slightly left but fully visible */
-    opacity: 1;
+    top: -65px;
+    left: -90px;
 }
-
-
-
-
 
 </style>
 
@@ -2410,13 +2426,9 @@ components.html("""
 <script>
 
 const data = [
-
 {
 text:`Jessica Resta
-Our Pinnacle team has been very helpful.
-They deliver high quality work.
-Always meet deadlines.
-Communication is excellent.`,
+My company was delighted with Pinnacle's performance on this project. Their project team was very helpful, got us everything we needed on time, and maintained a schedule. I will be utilizing their BIM Services again in the future.`,
 html: `
 <div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
 <div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
@@ -2428,10 +2440,7 @@ html: `
 
 {
 text:`Leonidas Tzevelekas
-The team understands requirements deeply.
-Communication is smooth and fast.
-Execution is very professional.
-Work quality is strong.`,
+The Pinnacle team can thoroughly review and analyze the drawing set and quickly respond with succinct questions needed to complete the task. Their responsiveness is assuring, and the quality and completeness of work are consistent with what our firm expects of all its employees.`,
 html: `
 <div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323505/Leonidas-Tzevelekas_y97z40.webp"></div>
 <div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
@@ -2443,10 +2452,7 @@ html: `
 
 {
 text:`Keith Rodriguez
-They always meet deadlines.
-Quality is consistent.
-Highly reliable team.
-Strong technical understanding.`,
+This was a very large project with 5 jobs at the same time. The schedule was aggressive, with lots of DRBs and RFIs to incorporate. Pinnacle did a great job being organized and hit our deadlines almost 100% of the time.`,
 html: `
 <div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323520/Keith-Rodriguez_kjr8gn.webp"></div>
 <div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
@@ -2458,10 +2464,7 @@ html: `
 
 {
 text:`Garnette Rouse
-Excellent coordination across teams.
-Very professional workflow.
-Strong communication system.
-Smooth project handling.`,
+The Pinnacle team can thoroughly review and analyze the drawing set and quickly respond with succinct questions needed to complete the task. Their responsiveness is assuring, and the quality and completeness of work are consistent with what our firm expects of all its employees.`,
 html: `
 <div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323532/Garnette-Rouse_mnlcxq.webp"></div>
 <div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
@@ -2473,10 +2476,7 @@ html: `
 
 {
 text:`Stewart Bohrer
-Very dependable and consistent delivery.
-Strong attention to detail.
-Great collaboration experience.
-Highly professional approach.`,
+Our Pinnacle team has been very helpful and very dedicated to our projects. The team is very good about asking questions and learning the process while meeting deadlines they are very professional.`,
 html: `
 <div class="card card1"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323545/stewart_bohrer_xmhl1t.webp"></div>
 <div class="card card2"><img src="https://res.cloudinary.com/dnodncslz/image/upload/v1776323491/Jessica-Resta_axwvxz.webp"></div>
@@ -2501,6 +2501,10 @@ function animateTextChange(newIndex){
     setTimeout(() => {
 
         index = newIndex;
+
+        
+
+
 
         textEl.innerText = data[index].text;
         deckEl.innerHTML = data[index].html;
@@ -2535,9 +2539,6 @@ animateTextChange(0);
 
 ##### Say Hello ########
 
-
-
-
 components.html("""
 <style>
 
@@ -2550,16 +2551,11 @@ components.html("""
     font-family: sans-serif;
     color: white;
     position: relative;
-
-    /* IMPORTANT FIX */
-    overflow: visible;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
-
-
-
-
+/* TEXT */
 .cta-title {
     font-size: 48px;
     font-weight: 800;
@@ -2569,19 +2565,46 @@ components.html("""
 .cta-subtitle {
     font-size: 16px;
     opacity: 0.85;
+    margin-bottom: 30px;
 }
 
+/* BUTTON DEFAULT (centered under text) */
+
 .cta-btn {
-    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
     background: white;
     color: #0A2A66;
-    padding: 10px 22px;
+    padding: 10px 16px 10px 20px;
     border-radius: 999px;
     font-weight: 600;
-    white-space: nowrap;
-    pointer-events: none;
+
+    position: relative;
+    transition: transform 0.08s linear;
+}
+
+
+.cta-arrow-circle {
+    width: 26px;
+    height: 26px;
+    background: #0A2A66;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-left: 8px;
+}
+
+
+
+/* ACTIVE FLOAT STATE */
+.cta-btn.active {
+    position: absolute;
     transform: translate(-50%, -50%);
-    transition: 0.05s linear;
 }
 </style>
 
@@ -2591,14 +2614,30 @@ components.html("""
         We’d love to hear from you and help you build something amazing
     </div>
 
-    <div class="cta-btn" id="ctaBtn">Reach Out Today</div>
+    <div class="cta-btn" id="ctaBtn">
+    Reach Out Today
+
+    <div class="cta-arrow-circle">
+        <span style="color:white; font-size:14px; line-height:1;">→</span>
+    </div>
 </div>
 
 <script>
 const box = document.getElementById("ctaBox");
 const btn = document.getElementById("ctaBtn");
 
+let active = false;
+
+// ACTIVATE ON ENTER
+box.addEventListener("mouseenter", () => {
+    active = true;
+    btn.classList.add("active");
+});
+
+// MOVE WITH CURSOR
 box.addEventListener("mousemove", (e) => {
+    if (!active) return;
+
     const rect = box.getBoundingClientRect();
 
     let x = e.clientX - rect.left;
@@ -2607,89 +2646,19 @@ box.addEventListener("mousemove", (e) => {
     btn.style.left = x + "px";
     btn.style.top = y + "px";
 });
+
+// RESET ON LEAVE
+box.addEventListener("mouseleave", () => {
+    active = false;
+    btn.classList.remove("active");
+
+    // back to default flow position
+    btn.style.left = "";
+    btn.style.top = "";
+    btn.style.transform = "";
+});
 </script>
 """, height=400)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
