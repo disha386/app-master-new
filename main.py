@@ -2553,6 +2553,8 @@ components.html("""
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 /* TEXT */
@@ -2568,8 +2570,7 @@ components.html("""
     margin-bottom: 30px;
 }
 
-/* BUTTON DEFAULT (centered under text) */
-
+/* BUTTON DEFAULT */
 .cta-btn {
     display: inline-flex;
     align-items: center;
@@ -2577,15 +2578,25 @@ components.html("""
 
     background: white;
     color: #0A2A66;
-    padding: 10px 16px 10px 20px;
+    padding: 10px 20px;
     border-radius: 999px;
     font-weight: 600;
 
-    position: relative;
-    transition: transform 0.08s linear;
+    position: absolute;
+    left: 50%;
+    top: calc(100% - 90px);
+
+    transform: translateX(-50%);  /*  FIXED (not full translate) */
+
+    white-space: nowrap;
+    will-change: left, top;       /*  smoother movement */
 }
 
 
+
+
+
+/* ARROW CIRCLE */
 .cta-arrow-circle {
     width: 26px;
     height: 26px;
@@ -2601,64 +2612,200 @@ components.html("""
 
 
 
-/* ACTIVE FLOAT STATE */
-.cta-btn.active {
+.edge-mask {
     position: absolute;
-    transform: translate(-50%, -50%);
+    inset: 0;
+    border-radius: 24px;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 2px transparent;
+    z-index: 2;
 }
+
+
+
+
 </style>
 
 <div class="cta-box" id="ctaBox">
+    
     <div class="cta-title">Say Hello</div>
+    
     <div class="cta-subtitle">
         We’d love to hear from you and help you build something amazing
     </div>
 
     <div class="cta-btn" id="ctaBtn">
-    Reach Out Today
+        <span>Reach Out Today</span>
 
-    <div class="cta-arrow-circle">
-        <span style="color:white; font-size:14px; line-height:1;">→</span>
+        <div class="cta-arrow-circle">
+            <span style="color:white; font-size:14px;">→</span>
+        </div>
     </div>
+<div class="edge-mask"></div>
 </div>
 
 <script>
 const box = document.getElementById("ctaBox");
 const btn = document.getElementById("ctaBtn");
 
-let active = false;
-
-// ACTIVATE ON ENTER
-box.addEventListener("mouseenter", () => {
-    active = true;
-    btn.classList.add("active");
-});
-
-// MOVE WITH CURSOR
 box.addEventListener("mousemove", (e) => {
-    if (!active) return;
 
     const rect = box.getBoundingClientRect();
+    const btnRect = btn.getBoundingClientRect();
 
     let x = e.clientX - rect.left;
     let y = e.clientY - rect.top;
 
+    const halfW = btnRect.width / 2;
+    const halfH = btnRect.height / 2;
+
+    const padding = 10;
+
+    x = Math.max(halfW + padding, Math.min(x, rect.width - halfW - padding));
+    y = Math.max(halfH + padding, Math.min(y, rect.height - halfH - padding));
+
     btn.style.left = x + "px";
     btn.style.top = y + "px";
+
+    /*  CRITICAL FIX */
+    btn.style.transform = "translate(-50%, -50%)";
 });
 
-// RESET ON LEAVE
+/* reset */
 box.addEventListener("mouseleave", () => {
-    active = false;
-    btn.classList.remove("active");
-
-    // back to default flow position
-    btn.style.left = "";
-    btn.style.top = "";
-    btn.style.transform = "";
+    btn.style.left = "50%";
+    btn.style.top = "calc(100% - 90px)";
+    btn.style.transform = "translateX(-50%)";
 });
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """, height=400)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
