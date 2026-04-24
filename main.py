@@ -3823,6 +3823,17 @@ changeImages('live');
 """, height=650)
 
 
+st.markdown("""
+<style>
+.block-container {
+    padding-bottom: 0rem !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
+
+
 
 
 #### BlUE CONTENT BOX ### 
@@ -3830,7 +3841,7 @@ changeImages('live');
 components.html("""
 <div style="
     width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
 ">
 
     <!-- BLUE BAR -->
@@ -4468,4 +4479,4 @@ align-items: flex-start;
 </div>
 
 
-""", height=1200)
+""", height=1065)
