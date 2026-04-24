@@ -3837,6 +3837,7 @@ st.markdown("""
 
 
 #### BlUE CONTENT BOX ### 
+#### BlUE CONTENT BOX ### 
 
 components.html("""
 <div style="
@@ -3845,15 +3846,28 @@ components.html("""
 ">
 
     <!-- BLUE BAR -->
-    <div style="
-        width: 100%;
-        background: #0b2a5b;
-        border-radius: 30px;
-        min-height: 1000px;
-        padding: 60px;
-        box-sizing: border-box;
-        font-family: sans-serif;
-    ">
+    
+<div style="
+    width: 100%;
+    background: #0b2a5b;
+    border-radius: 30px;
+    min-height: 1000px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+">
+
+
+
+<div style="
+    width: 100%;
+    max-width: 1200px;
+">
+
+
 
         <!-- TOP ROW -->
         <div style="
@@ -3900,13 +3914,12 @@ components.html("""
 <div style="
     display: flex;
     gap: 40px;
-flex-wrap: nowrap;   /*  prevents going below */
-align-items: flex-start;
-
-
-    margin-left: 60px;
+    flex-wrap: wrap;   /* FIX: was nowrap */
+    align-items: flex-start;
+    margin-left: 40px; /* reduced from 60px */
     color: white;
     font-size: 16px;
+    width: 100%;
 ">
 
     <!-- CONTACT COLUMN -->
@@ -3944,14 +3957,6 @@ align-items: flex-start;
         example@email.com
     </span>
 </div>
-
-
-
-
-
-
-
-
 
 
     <!-- SOCIAL CONNECT -->
@@ -4029,7 +4034,6 @@ align-items: flex-start;
         justify-content: center;
         cursor: pointer;
     ">
-
 
         <!-- BLUE ARROW -->
         <span style="
@@ -4118,310 +4122,171 @@ align-items: flex-start;
     height: 1px;
     background: #2ecc71;
     opacity: 0.7;
-    margin-top: 40px;
+    margin-bottom: 35px;
+    margin-top:40px;
 "></div>
 
+<!-- FOOTER WRAPPER -->
+<div>
 
-<!-- BOTTOM NAV ROW -->
+<!-- TOP ROW -->
+<!-- TOP ROW (WITH SUBHEADINGS LIKE SECOND ROW) -->
 <div style="
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    color: white;
-    font-weight: bold;
-    font-family: sans-serif;
-    flex-wrap: wrap;
-    gap: 20px;
+    width: 100%;
+    margin-bottom: 80px;
 ">
 
-    <!-- ABOUT COLUMN -->
-<div style="min-width: 180px;">
+    <!-- ABOUT -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">About</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Company Overview</div>
+            <div>Our Story</div>
+            <div>Leadership Team</div>
+            <div>CSR</div>
+            <div>Partnership</div>
+            <div>Our Team</div>
 
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        About
+
+        </div>
     </div>
 
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        font-weight: 400; 
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">About Pinnacle</div>
-        <div style="cursor:pointer;">Pinnacle Advantage</div>
-        <div style="cursor:pointer;">Our Team</div>
-        <div style="cursor:pointer;">Partnerships</div>
-        <div style="cursor:pointer;">Awards and Milestones</div>
+    <!-- CONSULTING SERVICES -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">Consulting Services</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>BIM Consulting</div>
+            <div>Digital Transformation</div>
+            <div>Project Advisory</div>
+            <div>ISO 19650</div>
+            <div>BIM Execution Plan</div>
+            <div>Automation</div>
+            <div>Training</div>
+
+        </div>
     </div>
 
-</div>
-
-<div style="min-width: 180px;">
-
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        Consulting Services
+    <!-- VERTICALS -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">Verticals</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Residential</div>
+            <div>Commercial</div>
+            <div>Infrastructure</div>
+            <div>Data Centre</div>
+            <div>Industrial</div>
+            <div>Stadium</div>
+        </div>
     </div>
 
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-weight: 400; 
-        font-size: 14px;
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">Strategy Consulting</div>
-        <div style="cursor:pointer;">Digital Transformation</div>
-        <div style="cursor:pointer;">BIM Consulting</div>
-        <div style="cursor:pointer;">Project Advisory</div>
-        <div style="cursor:pointer;">Sustainability Consulting</div>
-        <div style="cursor:pointer;">Risk Management</div>
+    <!-- RESOURCES -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">Resources</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Blogs</div>
+            <div>Case Studies</div>
+            <div>Brochures</div>
+            <div>Blog</div>
+            <div>Events</div>
+            <div>Publications</div>
+            <div>Whitepapers</div>
+        </div>
     </div>
 
-</div>
-
-<div style="min-width: 180px;">
-
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        Verticals
+    <!-- MARKETS -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">Markets</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>India</div>
+            <div>Middle East</div>
+            <div>Global Projects</div>
+             <div>Germany</div>
+              <div>Japan</div>
+               <div>UAE</div>
+        </div>
     </div>
 
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-weight: 400; 
-        font-size: 14px;
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">Architecture</div>
-        <div style="cursor:pointer;">Construction</div>
-        <div style="cursor:pointer;">Infrastructure</div>
-        <div style="cursor:pointer;">Real Estate</div>
-        <div style="cursor:pointer;">Industrial</div>
-        <div style="cursor:pointer;">stadium</div>
-    </div>
-
-</div>
-
-<div style="min-width: 180px;">
-
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        Resources
-    </div>
-
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-weight: 400; 
-        font-size: 14px;
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">Blogs</div>
-        <div style="cursor:pointer;">Case Studies</div>
-        <div style="cursor:pointer;">Whitepapers</div>
-        <div style="cursor:pointer;">Guides</div>
-        <div style="cursor:pointer;">publications</div>
+    <!-- BIM SERVICES -->
+    <div>
+        <div style="font-weight:510; color:white; margin-bottom:12px;">BIM Services</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>3D Modeling</div>
+            <div>Clash Detection</div>
+            <div>Mechanical</div>
+            <div>Coordination</div>
+            <div>Plumbing</div>
+        </div>
     </div>
 
 </div>
 
+<!-- SECOND ROW (FIXED PROPER GRID) -->
+<div style="
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 100px;
+">
 
-<div style="min-width: 180px;">
-
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        Markets
+    <div style="min-width:180px; flex:1;">
+        <div style="font-weight:510; color:white; margin-bottom:14px;">Our Products</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>BIM Modeling Tools</div>
+            <div>Clash Detection Suite</div>
+            <div>CAD Automation Tools</div>
+        </div>
     </div>
 
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        font-weight: 400; 
-        line-height: 1.8;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">India</div>
-        <div style="cursor:pointer;">Middle East</div>
-        <div style="cursor:pointer;">Europe</div>
-        <div style="cursor:pointer;">USA</div>
-        <div style="cursor:pointer;">Japan</div>
-        <div style="cursor:pointer;">Australia</div>
+    <div style="min-width:180px; flex:1;">
+        <div style="font-weight:510; color:white; margin-bottom:14px;">Portfolio</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Residential Projects</div>
+            <div>Commercial Buildings</div>
+            <div>Infrastructure Works</div>
+        </div>
     </div>
 
-</div>
-
-<div style="min-width: 180px;">
-
-    <div style="font-weight: 510; color: white; margin-bottom: 12px;">
-        BIM Services
+    <div style="min-width:180px; flex:1;">
+        <div style="font-weight:510; color:white; margin-bottom:14px;">Careers</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Current Openings</div>
+            <div>Internships</div>
+            <div>Life at Pinnacle</div>
+            <div>Employee Benefits</div>
+        </div>
     </div>
 
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        line-height: 1.8;
-        font-weight: 400; 
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-        <div style="cursor:pointer;">3D BIM Modeling</div>
-        <div style="cursor:pointer;">Clash Detection</div>
-        <div style="cursor:pointer;">Scan to BIM</div>
-        <div style="cursor:pointer;">BIM Coordination</div>
-    </div>
-
-</div>
-
-<!-- OUR PRODUCTS FOOTER SECTION -->
-<div style="margin-top: 60px;">
-
-    <!-- MAIN HEADING -->
-    <div style="
-        font-weight: 510;
-        color: white;
-        font-size: 16px;
-        margin-bottom: 14px;
-    ">
-        Our Products
-    </div>
-
-    <!-- SUB ITEMS (VERTICAL) -->
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        font-weight: 400; 
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-
-        <div style="cursor:pointer;">BIM Modeling Tools</div>
-        <div style="cursor:pointer;">Clash Detection Suite</div>
-        <div style="cursor:pointer;">CAD Automation Tools</div>
-       
-
+    <div style="min-width:180px; flex:1;">
+        <div style="font-weight:510; color:white; margin-bottom:14px;">Clients</div>
+        <div style="color:rgba(255,255,255,0.65); font-size:14px; line-height:2;">
+            <div>Government Projects</div>
+            <div>Private Developers</div>
+            <div>Real Estate Firms</div>
+            <div>Infrastructure Clients</div>
+            <div>Global Partners</div>
+        </div>
     </div>
 
 </div>
 
-<!-- PORTFOLIO FOOTER SECTION -->
-<div style="margin-top: 40px;">
-
-    <div style="
-        font-weight: 510;
-        color: white;
-        font-size: 16px;
-        margin-bottom: 14px;
-    ">
-        Portfolio
-    </div>
-
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        font-weight: 400; 
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-
-        <div style="cursor:pointer;">Residential Projects</div>
-        <div style="cursor:pointer;">Commercial Buildings</div>
-        <div style="cursor:pointer;">Infrastructure Works</div>
-      
-    </div>
-
 </div>
 
-
-<!-- CAREERS FOOTER SECTION -->
-<div style="margin-top: 40px;">
-
-    <div style="
-        font-weight: 510;
-        color: white;
-        font-size: 16px;
-        margin-bottom: 14px;
-    ">
-        Careers
-    </div>
-
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-weight: 400; 
-        font-size: 14px;
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-
-        <div style="cursor:pointer;">Current Openings</div>
-        <div style="cursor:pointer;">Internships</div>
-        <div style="cursor:pointer;">Life at Pinnacle</div>
-        <div style="cursor:pointer;">Employee Benefits</div>
-        
-
-    </div>
-
-</div>
-
-<!-- CLIENTS FOOTER SECTION -->
-<div style="margin-top: 40px;">
-
-    <div style="
-        font-weight: 510;
-        color: white;
-        font-size: 16px;
-        margin-bottom: 14px;
-    ">
-        Clients
-    </div>
-
-    <div style="
-        color: rgba(255,255,255,0.65);
-        font-size: 14px;
-        font-weight: 400; 
-        line-height: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    ">
-
-        <div style="cursor:pointer;">Government Projects</div>
-        <div style="cursor:pointer;">Private Developers</div>
-        <div style="cursor:pointer;">Real Estate Firms</div>
-        <div style="cursor:pointer;">Infrastructure Clients</div>
-        <div style="cursor:pointer;">Global Partners</div>
-
-    </div>
-
-</div>
-
-
-<!-- GREEN DIVIDER LINE (MOVED UP) -->
+<!-- GREEN DIVIDER -->
 <div style="
     width: 100%;
     height: 1px;
     background: #2ecc71;
     opacity: 0.7;
-    margin-top: 0px;   /* reduced from 50px */
+    margin-top: 25px;
 "></div>
 
-<!-- COPYRIGHT WRAPPER -->
+<!-- COPYRIGHT -->
 <div style="
     margin-top: 15px;
     color: rgba(255,255,255,0.65);
@@ -4430,31 +4295,18 @@ align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 10px;
-    align-items: flex-start;
 ">
 
-    <!-- LEFT SIDE -->
-    <div>
-        © 2026 pinnacleinfotech.com. All rights reserved.
-    </div>
+    <div>© 2026 pinnacleinfotech.com. All rights reserved.</div>
 
-    <!-- RIGHT SIDE (DIGITAL PARTNER) -->
-    <div style="
-        display: flex;
-        gap: 8px;
-        align-items: center;
-    ">
+    <div style="display:flex; gap:8px;">
         <span>Digital Partner</span>
-        <span style="color: white; font-weight: bold;">
-            Indus Net Technologies
-        </span>
+        <span style="color:white; font-weight:bold;">Indus Net Technologies</span>
     </div>
 
 </div>
 
-
-
-<!-- RIGHT SIDE LINKS (SEPARATE ROW) -->
+<!-- POLICY LINKS -->
 <div style="
     margin-top: 12px;
     display: flex;
@@ -4465,18 +4317,11 @@ align-items: flex-start;
     flex-wrap: wrap;
 ">
 
-    <div style="cursor:pointer; font-weight: 400 !important;">Privacy Policy</div>
-    <div style="cursor:pointer; font-weight: 400 !important;">Terms & Conditions</div>
-    <div style="cursor:pointer; font-weight: 400 !important;">Cookies Policy</div>
-    <div style="cursor:pointer; font-weight: 400 !important;">Sitemap</div>
+    <div>Privacy Policy</div>
+    <div>Terms & Conditions</div>
+    <div>Cookies Policy</div>
+    <div>Sitemap</div>
 
 </div>
 
-
-
-    </div>
-
-</div>
-
-
-""", height=1065)
+""", height=1110)
