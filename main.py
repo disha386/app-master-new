@@ -532,43 +532,75 @@ st.markdown("""
 
 video_url = "https://res.cloudinary.com/dnodncslz/video/upload/v1774435343/pinnacle-infotech-latest_h3qbk3.mp4"
 
+
+
 components.html(f"""
 <div style="
     width:100%;
-    margin-top:20px;
+    margin:0;
+    padding:0 20px;   /* small space so radius is visible */
+    box-sizing:border-box;
 ">
 
-    <!-- ADD MORE SIDE SPACE HERE -->
     <div style="
-        width:100%;
-        max-width:1400px;
-        margin:0 auto;
-        padding-left: 20px;   /* increased space */
-        padding-right:20px;  /* increased space */
-        box-sizing:border-box;
+        border-radius:30px;
+        overflow:hidden;
     ">
 
-        <div style="
-            border-radius:30px;
-            overflow:hidden;
-        ">
-
-            <video autoplay muted loop playsinline 
-                style="
-                    width:100%;
-                    height:600px;
-                    object-fit:cover;
-                    display:block;
-                ">
-                <source src="{video_url}" type="video/mp4">
-            </video>
-
-        </div>
+        <video autoplay muted loop playsinline 
+            style="
+                width:100%;
+                height:600px;
+                object-fit:cover;
+                display:block;
+            ">
+            <source src="{video_url}" type="video/mp4">
+        </video>
 
     </div>
 
 </div>
-""", height=650)
+""", height=620)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
