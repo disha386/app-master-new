@@ -8,7 +8,45 @@ import base64
 # ---------------- STATE (ADD BELOW IMPORTS) ----------------
 
 
-st.set_page_config(page_title="my webapp", layout="wide")
+st.set_page_config(
+    page_title=" ",   
+    page_icon=" "
+)
+
+st.markdown("""
+<style>
+/* Hide footer + Streamlit badge */
+footer {visibility: hidden;}
+[data-testid="stDecoration"] {display: none;}
+[data-testid="stToolbar"] {display: none;}
+[data-testid="stStatusWidget"] {display: none;}
+</style>
+""", unsafe_allow_html=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+st.markdown("""
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+
 
 st.markdown("""
 <style>
@@ -473,7 +511,7 @@ components.html(full_code, height=140)
 ######  PAGE CONTENT
 st.markdown("""
 <div style="
-    margin-top:-32px;
+    margin-top:-20px;
     padding-left:25px;   /* MATCH NAVBAR */
     width:100%;
     font-size:52px;
@@ -497,22 +535,41 @@ video_url = "https://res.cloudinary.com/dnodncslz/video/upload/v1774435343/pinna
 components.html(f"""
 <div style="
     width:100%;
-    padding-left:25px;   /*  MATCH NAVBAR */
-    padding-right:25px;  /*  MATCH RIGHT SIDE */
     margin-top:20px;
 ">
 
-    <video autoplay muted loop playsinline 
-        style="
-            width:100%;
-            height:auto;
-            border-radius:12px;
+    <!-- ADD MORE SIDE SPACE HERE -->
+    <div style="
+        width:100%;
+        max-width:1400px;
+        margin:0 auto;
+        padding-left: 20px;   /* increased space */
+        padding-right:20px;  /* increased space */
+        box-sizing:border-box;
+    ">
+
+        <div style="
+            border-radius:30px;
+            overflow:hidden;
         ">
-        <source src="{video_url}" type="video/mp4">
-    </video>
+
+            <video autoplay muted loop playsinline 
+                style="
+                    width:100%;
+                    height:600px;
+                    object-fit:cover;
+                    display:block;
+                ">
+                <source src="{video_url}" type="video/mp4">
+            </video>
+
+        </div>
+
+    </div>
 
 </div>
-""", height=530)
+""", height=650)
+
 
 
 
@@ -563,39 +620,6 @@ html = f"""
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 }}
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2849,12 +2873,6 @@ components.html("""
 
 
 
-
-
-
-
-
-
 </style>
 
 <div class="container mt-4">
@@ -2960,11 +2978,6 @@ Need a customized plugin? Share your requirements and kickstart the development 
 
                 </div>
             </div>
-
-
-
-
-
 
             <!-- SOLUTIONS -->
 <!-- SOLUTIONS -->
@@ -3123,23 +3136,7 @@ window.onload = function () {
 
 
 
-
-
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
 
 """, height=680)
 
@@ -3311,13 +3308,6 @@ ssarkar@pinnacleinfotech.com
 
 
 
-
-
-
-
-
-
-
                     </div>
                 </div>
 
@@ -3338,16 +3328,6 @@ Mr. Samrat Mallick
 samratm@pinnacleinfotech.com
 
 +1 832 818 1253
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3576,7 +3556,17 @@ components.html("""
 .custom-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+
+.hidden-slot {
+    visibility: hidden !important;
+    width: 280px !important;
+    height: 0px !important;
 }
+
+
+
+
+
 </style>
 
 <div style="display:flex; justify-content:center; width:100%;">
@@ -3720,20 +3710,58 @@ function changeImages(type){
     const imgs = imageSets[type];
     const row1 = document.getElementById("row1");
 
+    // reset layout
+    row1.style.display = "flex";
     row1.style.justifyContent = "flex-start";
 
+    // reset all images
     for(let i=1;i<=6;i++){
         const el = document.getElementById("img"+i);
-        el.style.display = "none";
         el.src = "";
+        el.style.display = "none";
+        el.style.visibility = "visible";
     }
 
+    // =========================
+    // TUTORIALS ONLY
+    // =========================
     if(type === "tutorials"){
-        const el = document.getElementById("img1");
-        el.src = imgs[0];
-        el.style.display = "block";
-        return;
+
+    const el = document.getElementById("img1");
+    el.src = imageSets.tutorials[0];
+    el.style.display = "block";
+
+    // hide others but KEEP layout stable
+    for(let i=2;i<=6;i++){
+        const e = document.getElementById("img"+i);
+        e.classList.add("hidden-slot");
+        e.src = "";
     }
+
+    return;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // =========================
+    // ALL OTHER SECTIONS
+    // =========================
+    let count = 0;
 
     for(let i=1;i<=6;i++){
         const el = document.getElementById("img"+i);
@@ -3741,142 +3769,26 @@ function changeImages(type){
         if(imgs[i-1]){
             el.src = imgs[i-1];
             el.style.display = "block";
+            count++;
         }
+    }
+
+    // hide remaining empty slots (important for case studies)
+    for(let i=count+1;i<=6;i++){
+        const el = document.getElementById("img"+i);
+        el.style.display = "none";
     }
 }
 
 changeImages('live');
 
+
+
+
+
 </script>
 
 """, height=650)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -4516,7 +4428,6 @@ align-items: flex-start;
     <div style="cursor:pointer; font-weight: 400 !important;">Sitemap</div>
 
 </div>
-
 
 
 
