@@ -12,18 +12,6 @@ st.set_page_config(
     page_title=" ",   
     page_icon=" "
 )
-#######MOBILE REPONSIVE 
-
-st.markdown("""
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-""", unsafe_allow_html=True)
-
-
-
-
-
-
-
 
 
 st.markdown("""
@@ -101,89 +89,6 @@ h1, h2, h3, h4 {
 iframe {
     margin: 0 !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* your existing CSS above */
-
-
-/*  ADD THIS AT THE VERY BOTTOM */
-@media (max-width: 768px) {
-
-    .navbar-center {
-        display: none !important;
-    }
-
-    .navbar-right {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .navbar {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 10px !important;
-    }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -840,7 +745,8 @@ components.html("""
     <div style="
         display:flex;
         gap:60px;
-        animation: scroll 20s linear infinite;
+       animation: scroll 40s linear infinite;
+       will-change: transform;
     ">
 
         <!-- SET 1 -->
@@ -877,7 +783,8 @@ components.html("""
     <div style="
         display:flex;
         gap:60px;
-        animation: scroll 20s linear infinite;
+       animation: scroll 40s linear infinite;
+       will-change: transform;
     ">
 
         <!-- SAME 4 SETS AGAIN -->
@@ -2471,10 +2378,16 @@ components.html("""
     box-shadow: 0 12px 30px rgba(0,0,0,0.30);
 }
 
-/* BUTTONS */
+
+
 .controls {
-    margin-top: 18px;
+    position: absolute;
+    bottom: -180px;
+    left: 0;
 }
+
+
+
 
 .btn {
     border: none;
@@ -3224,7 +3137,7 @@ components.html("""
 
 <div style="
     width: 100%;
-    background: linear-gradient(135deg, #4a77c2, #1f3f7a);
+   background: linear-gradient(135deg, #5f88cd, #3f66a6);
     padding: 50px 20px;
     margin-top: 40px;
     border-radius: 18px;
@@ -3232,22 +3145,40 @@ components.html("""
 ">
 
     <!-- LEFT CENTER LABEL -->
-    <div style="
-        position: absolute;
-        left: 40px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 22px;
-        font-weight: 700;
-        color: white;
-        letter-spacing: 1px;
-        white-space: nowrap;
-    ">
-        Our CSR
-    </div>
+    
+
+
+
 
     <div class="container">
-        <div class="row justify-content-center g-3">
+
+
+ <!-- FLEX WRAPPER -->
+    <div style="display:flex; align-items:center; gap:5px;">
+
+        <!-- LEFT TEXT -->
+        <div style="
+            font-size:22px;
+            font-weight:700;
+            color:white;
+            white-space:nowrap;
+            min-width:120px;
+        ">
+            Our CSR
+        </div>
+
+
+
+<div style="flex:1;">
+
+
+
+
+
+
+
+
+        <div class="row justify-content-start g-3">
 
             <!-- CARD 1 -->
             <div class="col-md-5">
@@ -3515,7 +3446,6 @@ nvarandani@pinnacleinfotech.com
 """, height=630)
 
 #### IMAGE#### 
-
 components.html("""
 <div style="
     width: 100%;
@@ -3534,52 +3464,96 @@ components.html("""
     ">
 
     <!-- BIG CENTER BLUE TAB -->
-    <div style="
+<div style="
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #3a66ab;
-    padding: 60px 90px;
+    background: linear-gradient(135deg, #587dd0, #2f548f);
+    padding: 60px 70px;
     border-radius: 18px;
-    min-width: 450px;
-    min-height: 140px;
+    min-width: 380px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    text-align: center;
 ">
 
-    <!-- TEXT -->
+    <!-- SMALL TITLE -->
     <div style="
         color: white;
-        font-size: 20px;
-        font-weight: 700;
-        margin-bottom: 12px;
-        font-family: sans-serif;
-        letter-spacing: 0.5px;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+        opacity: 0.9;
     ">
-        Grow At Pinnacle
+        Build Your Career
     </div>
 
-    <!-- BUTTON -->
+    <!-- MAIN TITLE -->
+   <div style="
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+">
+    Grow At Pinnacle
+</div>
+    <!-- DESCRIPTION -->
     <div style="
-        background: white;
-        color: #3a66ab;
-        padding: 18px 40px;
-        border-radius: 50px;
+        color: white;
+        font-size: 17px;
+        line-height: 1.6;
+        max-width: 320px;
+        margin-bottom: 25px;
+        opacity: 0.95;
+    ">
+        Join our team for meaningful career growth along with personal development programs.
+    </div>
+
+   <!-- BUTTON WITH ATTACHED ARROW -->
+<div style="
+    display: inline-flex;
+    align-items: center;
+    background: white;
+    border-radius: 50px;
+    padding: 6px;
+">
+
+    <!-- TEXT PART -->
+    <div style="
+        color: #355c9a;
+        padding: 10px 18px;
         font-weight: 700;
-        font-size: 18px;
-        cursor: pointer;
+        font-size: 15px;
         white-space: nowrap;
     ">
         View all opportunities
     </div>
 
+    <!-- ARROW CIRCLE (INSIDE CAPSULE) -->
+    <div style="
+        width: 34px;
+        height: 34px;
+      background: #243f73;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    ">
+        →
+    </div>
+
 </div>
-
-
 
 
 </div>
@@ -3634,11 +3608,7 @@ components.html("""
     transform: translateY(-2px);
     box-shadow: 0 6px 14px rgba(0,0,0,0.18);
 
-.hidden-slot {
-    visibility: hidden !important;
-    width: 280px !important;
-    height: 0px !important;
-}
+
 
 
 </style>
@@ -3801,20 +3771,22 @@ function changeImages(type){
     // =========================
     if(type === "tutorials"){
 
+    // show ONLY first image (LEFT box)
     const el = document.getElementById("img1");
     el.src = imageSets.tutorials[0];
     el.style.display = "block";
+    el.style.visibility = "visible";
 
-    // hide others but KEEP layout stable
+    // hide others BUT keep space (so layout doesn't break)
     for(let i=2;i<=6;i++){
         const e = document.getElementById("img"+i);
-        e.classList.add("hidden-slot");
         e.src = "";
+        e.style.visibility = "hidden";  //  IMPORTANT (not display none)
+        e.style.display = "block";      // keep structure
     }
 
     return;
 }
-
     // =========================
     // ALL OTHER SECTIONS
     // =========================
@@ -3841,7 +3813,7 @@ changeImages('live');
 
 </script>
 
-""", height=650)
+""", height=630)
 
 
 st.markdown("""
