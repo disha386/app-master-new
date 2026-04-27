@@ -12,15 +12,10 @@ st.set_page_config(
     page_title=" ",   
     page_icon=" "
 )
+#######MOBILE REPONSIVE 
 
 st.markdown("""
-<style>
-/* Hide footer + Streamlit badge */
-footer {visibility: hidden;}
-[data-testid="stDecoration"] {display: none;}
-[data-testid="stToolbar"] {display: none;}
-[data-testid="stStatusWidget"] {display: none;}
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 """, unsafe_allow_html=True)
 
 
@@ -31,6 +26,15 @@ footer {visibility: hidden;}
 
 
 
+st.markdown("""
+<style>
+/* Hide footer + Streamlit badge */
+footer {visibility: hidden;}
+[data-testid="stDecoration"] {display: none;}
+[data-testid="stToolbar"] {display: none;}
+[data-testid="stStatusWidget"] {display: none;}
+</style>
+""", unsafe_allow_html=True)
 
 
 
@@ -97,6 +101,88 @@ h1, h2, h3, h4 {
 iframe {
     margin: 0 !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* your existing CSS above */
+
+
+/*  ADD THIS AT THE VERY BOTTOM */
+@media (max-width: 768px) {
+
+    .navbar-center {
+        display: none !important;
+    }
+
+    .navbar-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 10px !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -561,47 +647,6 @@ components.html(f"""
 
 </div>
 """, height=620)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3596,9 +3641,6 @@ components.html("""
 }
 
 
-
-
-
 </style>
 
 <div style="display:flex; justify-content:center; width:100%;">
@@ -3773,23 +3815,6 @@ function changeImages(type){
     return;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // =========================
     // ALL OTHER SECTIONS
     // =========================
@@ -3813,10 +3838,6 @@ function changeImages(type){
 }
 
 changeImages('live');
-
-
-
-
 
 </script>
 
